@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+	<arg name="sim" default="false"/>
+    <arg name="sonar_topic" default="sonar_cloud"/>
+    <arg name="map_file" default="clf.yaml" />
+    <arg name="map" default="$(arg map_file)" />
+
+    <!-- Start map server -->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)"/>
+
+	<!-- Start amcl -->
+    <include file="$(find tiago_clf_nav)/launch/amcl.launch">
+        <arg name="sim" value="$(arg sim)"/>
+    </include>
+
+    <!-- Start laser filters -->
+    <include file="$(find tiago_clf_nav)/launch/filters.launch"/>
+
+    <!-- Start move base -->
+    <include file="$(find tiago_clf_nav)/launch/move_base.launch"/>
+
+    <!-- Start sonar to cloud
+         sonar to cloud is not open source
+    <include file="$(find tiago_clf_nav)/launch/sonar_to_cloud.launch">
+        <arg name="topic" value="$(arg sonar_topic)"/>
+    </include> -->
+    
+</launch>

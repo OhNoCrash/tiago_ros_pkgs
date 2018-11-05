@@ -1,0 +1,15 @@
+play_motion:
+  motions: 
+      nav:
+        joints: [head_1_joint, head_2_joint, torso_lift_joint]
+        meta: {description: pose for navigation, name: nav, usage: demo}
+        points:
+        - positions: [0, -0.65, 0.05]
+          time_from_start: 1.0
+      nav_start:
+        joints: [head_1_joint, head_2_joint]
+        meta: {description: pose for navigation, name: nav_start, usage: demo}
+        points:
+        - positions: [0, -0.65]
+          time_from_start: 1.0
+

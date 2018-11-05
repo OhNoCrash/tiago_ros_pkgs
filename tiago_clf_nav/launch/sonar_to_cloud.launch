@@ -1,0 +1,18 @@
+<launch>
+  
+  <rosparam command="load" file="$(find tiago_clf_nav)/config/tiago_nav_motions.yaml" />
+  
+  <arg name="topic" default="sonar_cloud"/>
+
+  <node pkg="sensor_to_cloud" type="sonar_to_cloud" name="sonar_to_cloud" output="screen">
+    <remap from="sonar_cloud" to="$(arg topic)" />
+    <!-- dynamic_reconfigure params -->
+    <param name="infinity_dist" value="4.0"/>
+    <param name="aperture_angle" value="0.25"/>
+    <param name="arc_resolution" value="0.05"/>
+    <!-- static params -->
+    <param name="sonar_base_topic" value="/sonar_base"/>
+    <param name="sonar_torso_topic" value="/sonar_torso"/>
+  </node>
+
+</launch>

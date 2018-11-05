@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <arg name="sim" default="false"/>
+
+    <group if="$(arg sim)">
+        <!-- Set initial pose to origin if sim is used -->  
+        <param name="initial_pose_x" value="0"/>
+        <param name="initial_pose_y" value="0"/>
+        <param name="initial_pose_a" value="0"/>
+    </group>
+    <group unless="$(arg sim)">
+        <!-- Load the last saved pose estimate (initial pose) -->
+        <rosparam file="$(env HOME)/.pal/pose.yaml" command="load"/>
+    </group>
+
+    <node pkg="amcl" type="amcl" name="amcl" output="screen">
+        <remap from="scan" to="scan"/>
+
+        <rosparam file="$(find tiago_clf_nav)/config/amcl.yaml" command="load"/>
+    </node>
+</launch>

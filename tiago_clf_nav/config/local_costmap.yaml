@@ -1,0 +1,95 @@
+# Independent settings for the local costmap
+local_costmap:
+
+  update_frequency : 5.0
+  publish_frequency: 2.0
+
+  static_map    : false
+  rolling_window: true
+  width         : 4.0
+  height        : 4.0
+  resolution    : 0.05
+
+  plugins:
+    - name: obstacle_layer
+      type: 'costmap_2d::ObstacleLayer'
+    - name: obstacle_sonar_layer
+      type: 'costmap_2d::ObstacleLayer'
+      #    - name: footprint_layer
+      #      type: 'costmap_2d::FootprintLayer'
+    - name: inflation_layer
+      type: 'costmap_2d::InflationLayer'
+
+  obstacle_layer:
+    enabled: true
+    observation_sources: sensor_scan_clf point_cloud_sensor1 point_cloud_sensor0
+    #combination_method: 0 # can erase static layer
+    point_cloud_sensor0: {sensor_frame: xtion_link, data_type: PointCloud2, topic: /voxel_grid/output, marking: true, clearing: false, min_obstacle_height: 0.05}
+    point_cloud_sensor1: {sensor_frame: xtion_link, data_type: PointCloud2, topic: /voxel_grid/output, marking: false, clearing: true, min_obstacle_height: -1.0}
+
+
+
+    sensor_scan_clf:
+      sensor_frame: base_laser_link
+      data_type: LaserScan
+      topic: /scan_clf
+      expected_update_rate: 0.2
+      #observation_persistence: 1.0
+      inf_is_valid: true
+      marking: true
+      clearing: true
+      raytrace_range: 25.0
+      obstacle_range: 8.0
+
+  obstacle_sonar_layer:
+    enabled: false
+    observation_sources: sonar_max_range_cloud sonar_cloud
+    #combination_method: 1
+
+    sonar_cloud:
+      sensor_frame: base_link
+      data_type: PointCloud2
+      topic: sonar_cloud
+      expected_update_rate: 1.0
+      observation_persistence: 0.0
+      marking: true
+      clearing: true
+      raytrace_range: 1.2
+      obstacle_range: 1.2
+      min_obstacle_height: -0.1
+      max_obstacle_height: 1.8
+
+    sonar_max_range_cloud:
+      sensor_frame: base_link
+      data_type: PointCloud2
+      topic: sonar_max_range_cloud
+      expected_update_rate: 1.0
+      observation_persistence: 0.0
+      marking: false
+      clearing: true
+      raytrace_range: 2.0
+      obstacle_range: 1.6
+      min_obstacle_height: -0.1
+      max_obstacle_height: 1.8
+
+  footprint_layer:
+    enabled: true
+
+  inflation_layer:
+    enabled            : true
+    inflation_radius   : 0.9
+    cost_scaling_factor: 3.0
+
+### Biron
+
+#local_costmap:
+  #global_frame: /map
+ # robot_base_frame: /base_link
+ # observation_sources: laser_scan_sensor point_cloud_sensor0 point_cloud_sensor1
+#  static_map: false
+#  rolling_window: true
+#  width: 3.0
+#  height: 3.0
+#  resolution: 0.05
+#  map_type: costmap
+#  transform_tolerance: 0.2

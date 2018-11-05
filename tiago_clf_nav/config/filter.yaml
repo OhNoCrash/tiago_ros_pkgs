@@ -1,0 +1,57 @@
+scan_filter_chain:
+# Filter extreme points as they cause major shadows
+- name: angle
+  type: laser_filters/LaserScanAngularBoundsFilter
+  params:
+    lower_angle: -1.65
+    upper_angle: 1.65
+
+- name: shadows
+  type: laser_filters/ScanShadowsFilter
+  params:
+    min_angle: 0
+    max_angle: 170
+    neighbors: 5 #3
+    window: 1
+
+# From tiago_laser_sensors
+- name: footprint_filter
+  type: laser_filters/LaserScanFootprintFilter
+  params:
+    inscribed_radius: 0.30
+
+- name: range
+  type: laser_filters/LaserScanRangeFilter
+  params:
+    lower_threshold: 0.05
+    upper_threshold: 25.0
+    lower_replacement_value: -.inf
+    upper_replacement_value: .inf
+
+
+
+# - name: range
+#   type: laser_filters/LaserScanRangeFilter
+#   params:
+#     lower_threshold: 0.3
+#     upper_threshold: .inf
+# - name: specific_angle_filter1
+#   type: laser_filters/LaserScanAngularBoundsFilterInPlace
+#   params:
+#     lower_angle: -1.50
+#     upper_angle: -1.30
+# - name: specific_angle_filter2
+#   type: laser_filters/LaserScanAngularBoundsFilterInPlace
+#   params:
+#     lower_angle: 1.30
+#     upper_angle: 1.50
+#- name: footprint_filter
+#  type: LaserScanFootprintFilter
+#  params:
+#    inscribed_radius: 0.24
+#- name: interpolation
+#  type: InterpolationFilter
+#- name: timestamp_corrector
+#  type: TimestampCorrector
+#  params:
+#    timestamp_offset: -0.2

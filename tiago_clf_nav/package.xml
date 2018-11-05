@@ -1,0 +1,15 @@
+<package>
+	<name>tiago_clf_nav</name>
+	<version>0.0.1</version>
+	<description>
+
+		Config Files for Tiago Navigation
+
+	</description>
+	<maintainer email="lruegeme@techfak.uni-bielefeld.de">Leroy Ruegemer</maintainer>
+	<author email="lruegeme@techfak.uni-bielefeld.de">Leroy Ruegemer</author>
+	<license>BSD</license>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	
+</package>
