@@ -6,4 +6,11 @@
     <remap from="scan" to="$(arg scan)"/>
     <rosparam file="$(find tiago_clf_nav)/config/gmapping.yaml" command="load"/>
   </node>
+
+  <!-- Start laser filters -->
+  <include file="$(find tiago_clf_nav)/launch/filters.launch"/>
+
+  <!-- Start move base -->
+  <include file="$(find tiago_clf_nav)/launch/move_base.launch"/>
+
 </launch>
