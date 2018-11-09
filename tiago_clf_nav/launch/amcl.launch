@@ -15,7 +15,7 @@
     </group>
 
     <node pkg="amcl" type="amcl" name="amcl" output="screen">
-        <remap from="scan" to="scan"/>
+        <remap from="scan" to="scan_clf"/>
 
         <rosparam file="$(find tiago_clf_nav)/config/amcl.yaml" command="load"/>
     </node>

@@ -18,7 +18,9 @@
     <include file="$(find tiago_clf_nav)/launch/filters.launch"/>
 
     <!-- Start move base -->
-    <include file="$(find tiago_clf_nav)/launch/move_base.launch"/>
+    <include file="$(find tiago_clf_nav)/launch/move_base.launch">
+        <arg name="sim" value="$(arg sim)"/>
+    </include>
 
     <!-- Start sonar to cloud
          sonar to cloud is not open source

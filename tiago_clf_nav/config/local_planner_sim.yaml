@@ -30,12 +30,12 @@ PalLocalPlanner:
 TrajectoryPlannerROS:
 
 # Set the acc.eleration limits of the robot - "most important thing"
-  acc_lim_x: 0.6                    
+  acc_lim_x: 0.5                    
   acc_lim_theta: !degrees 60.0      
 
 # Set the velocity limits of the robot
-  max_vel_x: 0.3                   
-  min_vel_x: 0.05                  
+  max_vel_x: 0.75                   
+  min_vel_x: 0.0                  
   max_vel_theta: !degrees 60.0      
   min_vel_theta: !degrees -60.0               
   min_in_place_vel_theta: !degrees 45.0 
@@ -67,7 +67,7 @@ TrajectoryPlannerROS:
   gdist_scale: 0.85                  # 
   occdist_scale: 0.02               # 0.01 -- weighting how much controller should avoid obstacles
   heading_lookahead: 0.325          # 0.325
-  heading_scoring: false            # false
+  heading_scoring: true             # false
   heading_scoring_timestep: 0.8     # 0.8 -- only with heading_scoring true
   dwa: false                         # true -- false if robot has low acceleration limits
   publish_cost_grid_pc: true        # false

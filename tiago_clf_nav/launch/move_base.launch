@@ -1,5 +1,7 @@
 <launch>
 
+    <arg name="sim" default="false"/>
+
     <!-- Run move_base -->
     <node pkg="move_base" type="move_base" respawn="true" name="move_base" output="screen">
         <remap from="cmd_vel" to="nav_vel"/>
@@ -13,7 +15,9 @@
         <rosparam file="$(find tiago_clf_nav)/config/costmap.yaml" command="load" ns="local_costmap" />
         <rosparam file="$(find tiago_clf_nav)/config/local_costmap.yaml" command="load" />
        
-        <rosparam file="$(find tiago_clf_nav)/config/local_planner.yaml" command="load" />
+        <rosparam if="$(arg sim)" file="$(find tiago_clf_nav)/config/local_planner_sim.yaml" command="load" />
+        <rosparam unless="$(arg sim)" file="$(find tiago_clf_nav)/config/local_planner.yaml" command="load" />
+
         <rosparam file="$(find tiago_clf_nav)/config/global_planner.yaml" command="load" />
         
     </node>
