@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <arg name="map" default="/home/pal/.pal/maps/config/map.yaml" />
+
+    <!-- Start map server -->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)"/>
+    
+</launch>

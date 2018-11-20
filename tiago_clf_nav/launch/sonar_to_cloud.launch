@@ -1,7 +1,5 @@
 <launch>
   
-  <rosparam command="load" file="$(find tiago_clf_nav)/config/tiago_nav_motions.yaml" />
-  
   <arg name="topic" default="sonar_cloud"/>
 
   <node pkg="sensor_to_cloud" type="sonar_to_cloud" name="sonar_to_cloud" output="screen">
