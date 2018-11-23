@@ -72,6 +72,25 @@
         <joint name="arm_6_joint" value="1.37"/>
         <joint name="arm_7_joint" value="0"/>
     </group_state>
+    <group_state name="transport" group="arm">
+        <joint name="arm_1_joint" value="0.41"/>
+        <joint name="arm_2_joint" value="-1.54"/>
+        <joint name="arm_3_joint" value="-0.61"/>
+        <joint name="arm_4_joint" value="2.33"/>
+        <joint name="arm_5_joint" value="0.16"/>
+        <joint name="arm_6_joint" value="1.44"/>
+        <joint name="arm_7_joint" value="0.84"/>
+    </group_state>
+    <group_state name="transport2" group="arm_torso">
+        <joint name="torso_lift_joint" value="0.23"/>
+        <joint name="arm_1_joint" value="0.19"/>
+        <joint name="arm_2_joint" value="0.15"/>
+        <joint name="arm_3_joint" value="-2.27"/>
+        <joint name="arm_4_joint" value="2.28"/>
+        <joint name="arm_5_joint" value="1.62"/>
+        <joint name="arm_6_joint" value="-0.65"/>
+        <joint name="arm_7_joint" value="2.03"/>
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper" parent_link="arm_tool_link" group="gripper" parent_group="arm_torso" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
