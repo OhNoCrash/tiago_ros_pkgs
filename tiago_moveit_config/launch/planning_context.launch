@@ -4,13 +4,13 @@
   <arg name="load_robot_description" default="false"/>
 
   <!-- Selection of kinematics solver -->
-  <arg name="kinematics" value="$(optenv IK_SOLVER kdl)" />
+  <arg name="planner" default="kdl" />
 
   <!-- The name of the parameter under which the URDF is loaded -->
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Selector for tiago type -->
-  <arg name="robot" default="titanium"/>
+  <arg name="robot" default="steel"/>
 
   <!-- Load universal robot description format (URDF) -->
   <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro.py '$(find tiago_description)/robots/tiago_$(arg robot).urdf.xacro' have_base_rgbd:=false"/>
@@ -25,7 +25,7 @@
 
   <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
   <group ns="$(arg robot_description)_kinematics">
-    <rosparam command="load" file="$(find tiago_moveit_config)/config/kinematics_$(arg kinematics).yaml"/>
+    <rosparam command="load" file="$(find tiago_moveit_config)/config/kinematics_$(arg planner).yaml"/>
   </group>
   
 </launch>
