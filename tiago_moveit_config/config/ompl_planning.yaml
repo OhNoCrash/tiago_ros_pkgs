@@ -13,18 +13,6 @@ planner_configs:
     type: geometric::RRT
   RRTConnectkConfigDefault:
     type: geometric::RRTConnect
-  CLF_RTTstar:
-    type: geometric::RRTstar
-    optimization_objective: MaximizeMinClearanceObjective
-    range: 0.0
-    goal_bias: 0.05
-    delay_collision_checking: 1
-  CLF_PRMstar:
-    type: geometric::PRMstar
-    optimization_objective: MaximizeMinClearanceObjective
-    range: 0.0
-    goal_bias: 0.05
-    delay_collision_checking: 1
   RRTstarkConfigDefault:
     type: geometric::RRTstar
   TRRTkConfigDefault:
@@ -46,10 +34,8 @@ arm_torso:
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
-    - CLF_RTTstar
-    - CLF_PRMstar
   projection_evaluator: joints(torso_lift_joint,arm_1_joint)
-  longest_valid_segment_fraction: 0.02
+  longest_valid_segment_fraction: 0.05
 arm:
   planner_configs:
     - SBLkConfigDefault
@@ -63,7 +49,5 @@ arm:
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
-    - CLF_RTTstar
-    - CLF_PRMstar
   projection_evaluator: joints(arm_1_joint, arm_2_joint)
-  longest_valid_segment_fraction: 0.02
+  longest_valid_segment_fraction: 0.05
