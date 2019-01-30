@@ -2,10 +2,10 @@
 <launch>
   <!-- Selector for tiago type -->
   <arg name="arm"  default="True"/>
-  <arg name="end_effector"  default="pal-hey5"/>
-  <arg name="ft_sensor"  default="schunk-ft"/>
+  <arg name="end_effector"  default="pal-gripper"/>
+  <arg name="ft_sensor"  default="false"/>
   <arg name="laser_model"  default="sick-571"/>
-  <arg name="camera_model"  default="orbbec-astra"/>
+  <arg name="camera_model"  default="asus-xtion"/>
   <!-- Use moveit camera manager -->
   <arg name="camera"  default="false"/>
 
