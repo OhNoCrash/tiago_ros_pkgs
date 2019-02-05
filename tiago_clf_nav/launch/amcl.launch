@@ -11,7 +11,10 @@
     </group>
     <group unless="$(arg sim)">
         <!-- Load the last saved pose estimate (initial pose) -->
-        <rosparam file="$(env HOME)/.pal/pose.yaml" command="load"/>
+        <param name="initial_pose_x" value="0"/>
+        <param name="initial_pose_y" value="0"/>
+        <param name="initial_pose_a" value="0"/>
+        <!-- <rosparam file="$(env HOME)/.pal/pose.yaml" command="load"/> -->
     </group>
 
     <node pkg="amcl" type="amcl" name="amcl" output="screen">
