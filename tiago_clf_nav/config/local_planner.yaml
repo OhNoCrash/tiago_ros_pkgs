@@ -5,7 +5,7 @@ base_local_planner: base_local_planner/TrajectoryPlannerROS
 PalLocalPlanner:
 
   # main params
-  acc_lim_x    : 0.6
+  acc_lim_x    : 0.5
   acc_lim_theta: !degrees 60.0
   xy_goal_tolerance : 0.2
   yaw_goal_tolerance: 0.2
@@ -34,7 +34,7 @@ TrajectoryPlannerROS:
   acc_lim_theta: !degrees 60.0      
 
 # Set the velocity limits of the robot
-  max_vel_x: 0.3                   
+  max_vel_x: 0.35                   
   min_vel_x: 0.05                  
   max_vel_theta: !degrees 60.0      
   min_vel_theta: !degrees -60.0               
