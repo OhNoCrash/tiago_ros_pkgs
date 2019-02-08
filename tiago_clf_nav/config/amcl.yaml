@@ -1,9 +1,17 @@
 # Odometry model:
 odom_model_type: diff-corrected
-odom_alpha1    : 0.02
-odom_alpha2    : 0.002
-odom_alpha3    : 0.08
-odom_alpha4    : 0.002
+# reduced https://answers.ros.org/question/227811/tuning-amcls-diff-corrected-and-omni-corrected-odom-models/
+odom_alpha1    : 0.001  # Specifies the expected noise in odometry's rotation estimate from the rotational component of the robot's motion.
+odom_alpha2    : 0.002  # Specifies the expected noise in odometry's rotation estimate from translational component of the robot's motion.
+odom_alpha3    : 0.004  # Specifies the expected noise in odometry's translation estimate from the translational component of the robot's motion.
+odom_alpha4    : 0.0005 # Specifies the expected noise in odometry's translation estimate from the rotational component of the robot's motion.
+
+# Odometry model: Tiago
+#odom_model_type: diff-corrected
+#odom_alpha1    : 0.2
+#odom_alpha2    : 0.2
+#odom_alpha3    : 0.8
+#odom_alpha4    : 0.2
 
 # Biron
 #odom_model_type: diff
@@ -14,11 +22,11 @@ odom_alpha4    : 0.002
 
 # Particle filter:
 min_particles    : 250
-max_particles    : 5000
+max_particles    : 2500
 kld_err          : 0.05
 kld_z            : 0.99
 update_min_d     : 0.1 #0.2
-update_min_a     : !degrees 10.0
+update_min_a     : !degrees 5.0
 resample_interval: 1
 converge_dist_threshold: 0.5
 
@@ -36,11 +44,11 @@ converge_dist_threshold: 0.5
 laser_model_type         : likelihood_field
 laser_max_range          : -1.0 #use reported max range (default)
 laser_min_range          : -1.0 #use reported min range (default)
-laser_max_beams          : 30
-laser_z_hit              : 0.5
+laser_max_beams          : 35
+laser_z_hit              : 0.6
 laser_z_short            : 0.05
 laser_z_max              : 0.05
-laser_z_rand             : 0.5
+laser_z_rand             : 0.4
 laser_sigma_hit          : 0.2
 laser_lambda_short       : 0.1
 laser_lambda_short       : 0.1
@@ -54,8 +62,8 @@ beam_skip_threshold      : 0.3
 beam_skip_error_threshold: 0.9
 
 # Update/Rate params:
-transform_tolerance: 0.27 # This value is to assure that amcl is newest than odometry. It depends on laser offset and frequency
-gui_publish_rate   : 10.0
+transform_tolerance: 0.2 # This value is to assure that amcl is newest than odometry. It depends on laser offset and frequency
+gui_publish_rate   : 5
 
 # Recovery:
 recovery_alpha_slow: 0.0
