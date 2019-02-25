@@ -31,6 +31,21 @@
         <joint name="arm_7_joint" />
         <joint name="arm_tool_joint" />
     </group>
+    <group name="arm_torso_gripper">
+        <joint name="torso_lift_joint" />
+        <joint name="arm_1_joint" />
+        <joint name="arm_2_joint" />
+        <joint name="arm_3_joint" />
+        <joint name="arm_4_joint" />
+        <joint name="arm_5_joint" />
+        <joint name="arm_6_joint" />
+        <joint name="arm_7_joint" />
+        <joint name="arm_tool_joint" />
+        <link name="gripper_left_finger_link" />
+        <link name="gripper_right_finger_link" />
+        <link name="gripper_link" />
+        <joint name="gripper_finger_joint" />
+    </group>
     <group name="gripper">
         <link name="gripper_left_finger_link" />
         <link name="gripper_right_finger_link" />
@@ -75,6 +90,7 @@
         <joint name="arm_6_joint" value="-0.65"/>
         <joint name="arm_7_joint" value="2.03"/>
     </group_state>
+
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper" parent_link="arm_tool_link" group="gripper" parent_group="arm_torso" />
 

@@ -2,18 +2,18 @@
 <launch>
   <!-- Selector for tiago type -->
   <arg name="arm"  default="True"/>
-  <arg name="end_effector"  default="pal-gripper"/>
-  <arg name="ft_sensor"  default="false"/>
+  <arg name="end_effector"  default="schunk-wsg-cupro"/>
+  <arg name="ft_sensor"  default="schunk-ft"/>
   <arg name="laser_model"  default="sick-571"/>
   <arg name="camera_model"  default="asus-xtion"/>
+  <arg name="planner" default="kdl"/>
+
   <!-- Use moveit camera manager -->
   <arg name="camera"  default="false"/>
 
-  <arg name="planner" default="kdl"/>
-
   <include file="$(find tiago_moveit_config)/launch/planning_context.launch">
-    <arg name="planner" value="$(arg planner)" />
     <arg name="arm" value="$(arg arm)"/>
+    <arg name="planner" value="$(arg planner)" />
     <arg name="end_effector" value="$(arg end_effector)"/>
     <arg name="ft_sensor" value="$(arg ft_sensor)"/>
     <arg name="laser_model" value="$(arg laser_model)"/>

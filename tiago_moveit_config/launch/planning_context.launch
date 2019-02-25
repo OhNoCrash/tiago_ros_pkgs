@@ -2,17 +2,18 @@
 <launch>
   <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
   <arg name="load_robot_description" default="false"/>
-  <arg name="planner" default="kdl" />
+
 
   <!-- The name of the parameter under which the URDF is loaded -->
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Selector for tiago type -->
+  <arg name="planner" default="kdl" />
   <arg name="arm"  default="True"/>
-  <arg name="end_effector"  default="pal-gripper"/>
-  <arg name="ft_sensor"  default="false"/>
+  <arg name="end_effector"  default="pal-hey5"/>
+  <arg name="ft_sensor"  default="schunk-ft"/>
   <arg name="laser_model"  default="sick-571"/>
-  <arg name="camera_model"  default="asus-xtion"/>
+  <arg name="camera_model"  default="orbbec-astra"/>
   <arg name="file_suffix" value="$(eval ('no-arm' if not arm else end_effector+ ('' if not ft_sensor else '_'+ft_sensor)))"/>
 
   <!-- Load universal robot description format (URDF) -->

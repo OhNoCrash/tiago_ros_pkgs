@@ -7,7 +7,7 @@
 
   <arg name="config" default="false" />
   <arg unless="$(arg config)" name="command_args" value="" />
-  <arg     if="$(arg config)" name="command_args" value="-d $(find tiago_moveit_config)/launch/moveit.rviz" />
+  <arg     if="$(arg config)" name="command_args" value="-d $(find tiago_moveit_config)/config/moveit.rviz" />
 
   <!-- Selection of kinematics solver -->
   <arg name="kinematics" value="$(optenv IK_SOLVER kdl)" />
