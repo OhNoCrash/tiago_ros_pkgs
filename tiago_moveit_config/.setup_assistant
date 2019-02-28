@@ -2,10 +2,10 @@ moveit_setup_assistant_config:
   URDF:
     package: tiago_description
     relative_path: robots/tiago.moveit.xacro
-    xacro_args: ""
+    xacro_args: --inorder
   SRDF:
     relative_path: config/srdf/tiago_schunk-wsg-cupro_schunk-ft.srdf
   CONFIG:
     author_name: Leroy Ruegemer
     author_email: lruegeme@techfak.uni-bielefeld.de
-    generated_timestamp: 1550822787
+    generated_timestamp: 1551344237

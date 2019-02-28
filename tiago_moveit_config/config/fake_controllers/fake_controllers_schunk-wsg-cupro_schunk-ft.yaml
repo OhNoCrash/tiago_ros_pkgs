@@ -32,9 +32,6 @@ controller_list:
   - name: fake_gripper_controller
     joints:
       - gripper_finger_joint
-  - name: fake_cupro_gripper_controller
-    joints:
-      - gripper_finger_joint
   - name: fake_head_controller
     joints:
       - head_1_joint
