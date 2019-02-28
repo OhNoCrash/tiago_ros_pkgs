@@ -2,10 +2,10 @@
 <launch>
   <!-- Selector for tiago type -->
   <arg name="arm"  default="True"/>
-  <arg name="end_effector"  default="pal-hey5"/>
+  <arg name="end_effector"  default="schunk-wsg-cupro"/>
   <arg name="ft_sensor"  default="schunk-ft"/>
   <arg name="laser_model"  default="sick-571"/>
-  <arg name="camera_model"  default="orbbec-astra"/>
+  <arg name="camera_model"  default="asus-xtion"/>
 
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
