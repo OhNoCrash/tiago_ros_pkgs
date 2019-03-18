@@ -86,7 +86,7 @@ local_costmap:
       obstacle_range: 8.0
 
   obstacle_sonar_layer:
-    enabled: true
+    enabled: false
     observation_sources: sonar_max_range_cloud sonar_cloud
     #combination_method: 1
 
