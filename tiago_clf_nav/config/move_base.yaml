@@ -16,9 +16,10 @@ alternative_goals_thresh: 0.5
 
 #recovery
 recovery_behaviors:
-  #- {name: 'rotate', type: rotate_recovery/RotateRecovery}
   - {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}
+  - {name: 'rotate_90', type: rotate_recovery/RotateRecovery}
   - {name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery} # biron
+  - {name: 'rotate_180', type: rotate_recovery/RotateRecovery}
 
 aggressive_reset:
   reset_distance: 0.0
@@ -28,8 +29,13 @@ conservative_reset:
   layer_names: ["obstacle_layer_sonar", "rgbd_obstacle_layer"]
   reset_distance: 0.0
 
-rotate:
-  max_rotational_vel: 0.6
+rotate_90:
+  max_vel_theta: 0.6
+  goal_angle: 1.57
+
+rotate_180:
+  max_vel_theta: 0.6
+  goal_angle: 3.1415
 
 ### Biron
 #controller_frequency: 10.0 #20.0 control the base in hz
