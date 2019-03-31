@@ -6,7 +6,7 @@ PalLocalPlanner:
 
   # main params
   acc_lim_x    : 0.5
-  acc_lim_theta: !degrees 60.0
+  acc_lim_theta: !degrees 30.0
   xy_goal_tolerance : 0.2
   yaw_goal_tolerance: 0.2
   obstacle_avoider: 0 # VFH
@@ -34,14 +34,14 @@ TrajectoryPlannerROS:
   acc_lim_theta: !degrees 60.0      
 
 # Set the velocity limits of the robot
-  max_vel_x: 0.35                   
-  min_vel_x: 0.05                  
-  max_vel_theta: !degrees 60.0      
-  min_vel_theta: !degrees -60.0               
+  max_vel_x: 0.6                   
+  min_vel_x: 0.0                  
+  max_vel_theta: !degrees 90.0      
+  min_vel_theta: !degrees -90.0               
   min_in_place_vel_theta: !degrees 45.0 
 
 # Notice that this velocity is set to be negative. A bit confusing admittedly.
-  escape_vel: -0.1                  # -0.1
+  escape_vel: -0.0                 # -0.1
 
 # p2os is no holonomic robot.
   holonomic_robot: false            # true
@@ -78,11 +78,10 @@ TrajectoryPlannerROS:
   prune_plan: true                  # true
 
 # --- recovery behaviours 
-#recovery_behaviors: [{name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery}]
-#, {name: rotate_recovery, type: rotate_recovery/RotateRecovery}
+# recovery_behaviors: [{name: rotate_recovery, type: rotate_recovery/RotateRecovery}]
 
       #DEFAULT: [{name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery}, {name: rotate_recovery, type: rotate_recovery/RotateRecovery}, {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}]
 
 #conservative_reset_dist: 4.0
 
-  clearing_rotation_allowed: true
+# clearing_rotation_allowed: true
