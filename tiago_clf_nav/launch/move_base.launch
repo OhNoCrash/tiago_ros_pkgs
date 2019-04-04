@@ -25,5 +25,10 @@
         <rosparam file="$(find tiago_clf_nav)/config/global_planner.yaml" command="load" />
 
     </node>
+    
+    <!-- Start laser filters -->
+    <include file="$(find tiago_clf_nav)/launch/filters.launch">
+        <arg name="sim" value="$(arg sim)"/>
+    </include>
 
 </launch>
