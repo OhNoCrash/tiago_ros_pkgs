@@ -5,8 +5,8 @@ base_local_planner: base_local_planner/TrajectoryPlannerROS
 PalLocalPlanner:
 
   # main params
-  acc_lim_x    : 0.5
-  acc_lim_theta: !degrees 30.0
+  acc_lim_x    : 0.3
+  acc_lim_theta: !degrees 15.0
   xy_goal_tolerance : 0.2
   yaw_goal_tolerance: 0.2
   obstacle_avoider: 0 # VFH
@@ -20,7 +20,7 @@ PalLocalPlanner:
   decay              : 0.85
   max_dist_plan_ahead: 2.0
   min_dist_plan_ahead: 0.27
-  dist_to_final_speed: 0.27
+  dist_to_final_speed: 1
   
   allow_backwards    : false
   robot_width      : 0.54
@@ -30,14 +30,14 @@ PalLocalPlanner:
 TrajectoryPlannerROS:
 
 # Set the acc.eleration limits of the robot - "most important thing"
-  acc_lim_x: 0.6                    
-  acc_lim_theta: !degrees 60.0      
+  acc_lim_x: 0.2                   
+  acc_lim_theta: !degrees 15.0      
 
 # Set the velocity limits of the robot
-  max_vel_x: 0.6                   
+  max_vel_x: 0.45                   
   min_vel_x: 0.0                  
-  max_vel_theta: !degrees 90.0      
-  min_vel_theta: !degrees -90.0               
+  max_vel_theta: !degrees 60.0      
+  min_vel_theta: !degrees -60.0               
   min_in_place_vel_theta: !degrees 45.0 
 
 # Notice that this velocity is set to be negative. A bit confusing admittedly.

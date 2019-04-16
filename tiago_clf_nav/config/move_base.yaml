@@ -1,5 +1,5 @@
 #move base
-planner_frequency: 1.0
+planner_frequency: 2.0
 planner_patience : 0.5
 
 controller_frequency: 10.0
