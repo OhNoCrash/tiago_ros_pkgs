@@ -10,12 +10,12 @@ global_costmap:
   resolution: 0.1
 
   plugins:
-    - name: rgbd_obstacle_layer
-      type: 'spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer'
     - name: static_layer
       type: 'costmap_2d::StaticLayer'
     - name: obstacle_layer
       type: 'costmap_2d::ObstacleLayer'
+    - name: rgbd_obstacle_layer
+      type: 'spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer'
       #    - name: footprint_layer
       #      type: 'costmap_2d::FootprintLayer'
     - name: inflation_layer
@@ -64,9 +64,9 @@ global_costmap:
       clearing: true
       min_z: 0.1                   #default 0, meters
       max_z: 7.0                   #default 10, meters
-      vertical_fov_angle: 0.7      #default 0.7, radians
-      horizontal_fov_angle: 1.04   #default 1.04, radians
-      decay_acceleration: 1.       #default 0, 1/s^2. If laser scanner MUST be 0
+      vertical_fov_angle: 1.2      #default 0.7, radians
+      horizontal_fov_angle: 1.6   #default 1.04, radians
+      decay_acceleration: 5      #default 0, 1/s^2. If laser scanner MUST be 0
       model_type: 0                #default 0 (depth camera). Use 1 for 3D Lidar
 
   obstacle_layer:
