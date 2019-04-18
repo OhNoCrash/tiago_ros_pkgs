@@ -10,3 +10,4 @@ GlobalPlanner:
   old_navfn_behavior: false
   neutral_cost: 100
   last_plan_if_blocked: true
+  cost_factor: 4.5 #defaut: not configured/check docs
