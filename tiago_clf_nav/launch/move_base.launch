@@ -27,8 +27,10 @@
     </node>
     
     <!-- Start laser filters -->
-    <include file="$(find tiago_clf_nav)/launch/filters.launch">
-        <arg name="sim" value="$(arg sim)"/>
-    </include>
+    <group if="$(arg sim)"> <!-- started on robot pal_startup/clf_lase_filters -->
+        <include file="$(find tiago_clf_nav)/launch/filters.launch">
+            <arg name="sim" value="$(arg sim)"/>
+        </include>
+    </group>
 
 </launch>
