@@ -16,9 +16,10 @@ alternative_goals_thresh: 0.5
 
 #recovery
 recovery_behaviors:
+  - {name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery} # biron
   - {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}
   #- {name: 'rotate_90', type: rotate_recovery/RotateRecovery}
-  - {name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery} # biron
+  
   #- {name: 'rotate_180', type: rotate_recovery/RotateRecovery}
 
 aggressive_reset:

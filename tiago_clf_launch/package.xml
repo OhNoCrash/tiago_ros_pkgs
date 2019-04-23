@@ -1,0 +1,15 @@
+<package>
+
+  <name>tiago_clf_launch</name>
+  <version>0.0.1</version>
+  <description>
+     Stuff
+  </description>
+  <author email="lruegeme@techfak.uni-bielefeld.de">Leroy Ruegemer</author>
+  <maintainer email="lruegeme@techfak.uni-bielefeld.de">Leroy Ruegemer</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

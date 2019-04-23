@@ -1,0 +1,6 @@
+<launch>
+
+    <!-- Load Poses -->
+    <rosparam command="load" file="$(find tiago_clf_launch)/config/tiago_motions.yaml" />
+
+</launch>
