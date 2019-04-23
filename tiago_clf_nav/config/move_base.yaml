@@ -24,10 +24,10 @@ recovery_behaviors:
 
 aggressive_reset:
   reset_distance: 0.0
-  layer_names: ["obstacle_layer_sonar", "obstacle_laser_layer", "obstacle_layer", "rgbd_obstacle_layer"]
+  layer_names: ["obstacle_sonar_layer", "obstacle_laser_layer", "obstacle_layer", "rgbd_obstacle_layer"]
 
 conservative_reset:
-  layer_names: ["obstacle_layer_sonar", "rgbd_obstacle_layer"]
+  layer_names: ["obstacle_sonar_layer", "rgbd_obstacle_layer"]
   reset_distance: 0.0
 
 rotate_90:
