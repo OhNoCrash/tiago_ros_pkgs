@@ -16,8 +16,8 @@ local_costmap:
       type: 'spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer'
     - name: obstacle_layer
       type: 'costmap_2d::ObstacleLayer'
-    - name: obstacle_sonar_layer
-      type: 'costmap_2d::ObstacleLayer'
+    # - name: obstacle_sonar_layer
+    #   type: 'costmap_2d::ObstacleLayer'
       #    - name: footprint_layer
       #      type: 'costmap_2d::FootprintLayer'
     - name: inflation_layer
