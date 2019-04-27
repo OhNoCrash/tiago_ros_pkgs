@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-    <arg name="scan" default="scan"/>
+    <arg name="scan" default="scan_clf"/>
     <arg name="sim" default="false"/>
 
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
