@@ -33,4 +33,6 @@
         </include>
     </group>
 
+    <include file="$(find tiago_clf_nav)/launch/follow_filter.launch" />
+
 </launch>
