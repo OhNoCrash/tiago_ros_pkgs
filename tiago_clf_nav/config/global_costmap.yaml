@@ -28,12 +28,12 @@ global_costmap:
 
   rgbd_obstacle_layer:
     enabled:               true
-    voxel_decay:           30    #seconds if linear, e^n if exponential
+    voxel_decay:           10    #seconds if linear, e^n if exponential
     decay_model:           0      #0=linear, 1=exponential, -1=persistent
     voxel_size:            0.1   #meters
     track_unknown_space:   true   #default space is unknown
     observation_persistence: 0.0  #seconds
-    max_obstacle_height:   2.0    #meters
+    max_obstacle_height:   1.5    #meters
     unknown_threshold:     15     #voxel height
     mark_threshold:        0      #voxel height
     update_footprint_enabled: true
@@ -66,7 +66,7 @@ global_costmap:
       max_z: 7.0                   #default 10, meters
       vertical_fov_angle: 1.2      #default 0.7, radians
       horizontal_fov_angle: 1.6   #default 1.04, radians
-      decay_acceleration: 5      #default 0, 1/s^2. If laser scanner MUST be 0
+      decay_acceleration: 45      #default 0, 1/s^2. If laser scanner MUST be 0
       model_type: 0                #default 0 (depth camera). Use 1 for 3D Lidar
 
   obstacle_layer:

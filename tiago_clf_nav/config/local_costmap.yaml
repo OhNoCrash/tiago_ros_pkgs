@@ -63,7 +63,7 @@ local_costmap:
       max_z: 7.0                   #default 10, meters
       vertical_fov_angle: 1.2      #default 0.7, radians
       horizontal_fov_angle: 1.2   #default 1.04, radians
-      decay_acceleration: 5.       #default 0, 1/s^2. If laser scanner MUST be 0
+      decay_acceleration: 45.       #default 0, 1/s^2. If laser scanner MUST be 0
       model_type: 0                #default 0 (depth camera). Use 1 for 3D Lidar
 
   obstacle_layer:
