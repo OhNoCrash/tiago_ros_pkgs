@@ -335,3 +335,17 @@ play_motion:
         usage: demo
         description: 'head_tour'
 
+    pointing_left:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
+      meta: {description: pointing_left, name: pointing_left, usage: demo}
+      points:
+      - positions: [0.19998590559757012, -1.339984962186872, -0.19954286766172208, 1.940211394560432, -1.5704734929417996, 0.10990430796763995, -1.390177870304425]
+        time_from_start: 1.0
+
+    pointing_home:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
+      meta: {description: pointing_home, name: pointing_home, usage: demo}
+      points:
+      - positions: [0.20, -1.34, -0.20, 1.94, -1.57, 1.37, 0.0]
+        time_from_start: 1.0
+
