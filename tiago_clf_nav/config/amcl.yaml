@@ -21,7 +21,7 @@ odom_alpha4    : 0.04 # Specifies the expected noise in odometry's translation e
 #odom_alpha4: 0.2
 
 # Particle filter:
-min_particles    : 500
+min_particles    : 350
 max_particles    : 2500
 kld_err          : 0.07
 kld_z            : 0.99
@@ -44,7 +44,7 @@ converge_dist_threshold: 0.5
 laser_model_type         : likelihood_field_prob
 laser_max_range          : -1.0 #use reported max range (default)
 laser_min_range          : -1.0 #use reported min range (default)
-laser_max_beams          : 60
+laser_max_beams          : 35
 laser_z_hit              : 0.6
 laser_z_short            : 0.05
 laser_z_max              : 0.05
