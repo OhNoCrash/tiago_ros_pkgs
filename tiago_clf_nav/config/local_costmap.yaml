@@ -1,8 +1,8 @@
 # Independent settings for the local costmap
 local_costmap:
 
-  update_frequency : 5.0
-  publish_frequency: 2.0
+  update_frequency : 2.5
+  publish_frequency: 2.5
   max_obstacle_height: 2
 
   static_map    : false
@@ -63,7 +63,7 @@ local_costmap:
       max_z: 7.0                   #default 10, meters
       vertical_fov_angle: 1.2      #default 0.7, radians
       horizontal_fov_angle: 1.2   #default 1.04, radians
-      decay_acceleration: 5.       #default 0, 1/s^2. If laser scanner MUST be 0
+      decay_acceleration: 8.       #default 0, 1/s^2. If laser scanner MUST be 0
       model_type: 0                #default 0 (depth camera). Use 1 for 3D Lidar
 
   obstacle_layer:
@@ -76,7 +76,7 @@ local_costmap:
     sensor_scan_clf:
       sensor_frame: base_laser_link
       data_type: LaserScan
-      topic: /scan_max
+      topic: /scan_clf
       expected_update_rate: 0.2
       #observation_persistence: 1.0
       inf_is_valid: true
