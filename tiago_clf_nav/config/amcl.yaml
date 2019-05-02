@@ -2,9 +2,9 @@
 odom_model_type: diff-corrected
 # reduced https://answers.ros.org/question/227811/tuning-amcls-diff-corrected-and-omni-corrected-odom-models/
 odom_alpha1    : 0.2  # Specifies the expected noise in odometry's rotation estimate from the rotational component of the robot's motion.
-odom_alpha2    : 0.08  # Specifies the expected noise in odometry's rotation estimate from translational component of the robot's motion.
-odom_alpha3    : 0.1  # Specifies the expected noise in odometry's translation estimate from the translational component of the robot's motion.
-odom_alpha4    : 0.04 # Specifies the expected noise in odometry's translation estimate from the rotational component of the robot's motion.
+odom_alpha2    : 0.2  # Specifies the expected noise in odometry's rotation estimate from translational component of the robot's motion.
+odom_alpha3    : 0.2  # Specifies the expected noise in odometry's translation estimate from the translational component of the robot's motion.
+odom_alpha4    : 0.2 # Specifies the expected noise in odometry's translation estimate from the rotational component of the robot's motion.
 
 # Odometry model: Tiago
 #odom_model_type: diff-corrected
@@ -44,7 +44,7 @@ converge_dist_threshold: 0.5
 laser_model_type         : likelihood_field_prob
 laser_max_range          : -1.0 #use reported max range (default)
 laser_min_range          : -1.0 #use reported min range (default)
-laser_max_beams          : 35
+laser_max_beams          : 60
 laser_z_hit              : 0.6
 laser_z_short            : 0.05
 laser_z_max              : 0.05

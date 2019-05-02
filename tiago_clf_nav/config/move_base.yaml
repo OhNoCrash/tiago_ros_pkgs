@@ -28,7 +28,7 @@ aggressive_reset:
 
 conservative_reset:
   layer_names: ["obstacle_sonar_layer", "rgbd_obstacle_layer"]
-  reset_distance: 0.0
+  reset_distance: 5.0
 
 rotate_90:
   max_vel_theta: 0.6

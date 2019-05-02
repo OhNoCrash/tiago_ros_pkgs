@@ -1,8 +1,8 @@
 # Independent settings for the planner's costmap
 global_costmap:
 
-  update_frequency : 5.0
-  publish_frequency: 5.0
+  update_frequency : 2.5
+  publish_frequency: 2.5
 
   #track_unknown_space: true
   #unknown_cost_value : 255
@@ -28,7 +28,7 @@ global_costmap:
 
   rgbd_obstacle_layer:
     enabled:               true
-    voxel_decay:           10    #seconds if linear, e^n if exponential
+    voxel_decay:           5    #seconds if linear, e^n if exponential
     decay_model:           0      #0=linear, 1=exponential, -1=persistent
     voxel_size:            0.1   #meters
     track_unknown_space:   true   #default space is unknown
@@ -66,7 +66,7 @@ global_costmap:
       max_z: 7.0                   #default 10, meters
       vertical_fov_angle: 1.2      #default 0.7, radians
       horizontal_fov_angle: 1.6   #default 1.04, radians
-      decay_acceleration: 5.      #default 0, 1/s^2. If laser scanner MUST be 0
+      decay_acceleration: 8.      #default 0, 1/s^2. If laser scanner MUST be 0
       model_type: 0                #default 0 (depth camera). Use 1 for 3D Lidar
 
   obstacle_layer:
