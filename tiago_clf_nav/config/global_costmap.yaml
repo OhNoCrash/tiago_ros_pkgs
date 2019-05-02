@@ -77,7 +77,7 @@ global_costmap:
     sensor_scan_clf:
       sensor_frame: base_laser_link
       data_type: LaserScan
-      topic: /scan_max
+      topic: /scan_clf
       expected_update_rate: 2.0
       #observation_persistence: 1.0
       #inf_is_valid: true
@@ -91,7 +91,7 @@ global_costmap:
 
   inflation_layer:
     enabled            : true
-    inflation_radius   : 1.5
+    inflation_radius   : 0.5
     cost_scaling_factor: 3
 
 ### Biron
