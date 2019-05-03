@@ -2,7 +2,7 @@
 
     <node pkg="laser_filters" respawn="true" type="scan_to_scan_filter_chain" name="max_laser_filter">
         <remap from="scan_filtered" to="scan_max"/>
-        <remap from="scan" to="scan_clf"/>
+        <remap from="scan" to="scan_raw"/>
         <rosparam command="load" file="$(find tiago_clf_nav)/config/max_laser_config_ownfilter.yaml" />
     </node>
 
