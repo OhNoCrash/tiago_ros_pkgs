@@ -353,7 +353,7 @@ play_motion:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
       meta: {description: restaurant_carry, name: restaurant_carry, usage: demo}
       points:
-      - positions: [0.20003192563162497, -1.3405832226295846, -0.19981234548359428, 1.9407329549463865, -1.5698799831991088, 1.3495498456874668, -0.9500264796654432]
+      - positions: [0.20003192563162497, -1.3405832226295846, -0.19981234548359428, 1.9407329549463865, -1.5698799831991088, 1.3495498456874668, -1.39]
         time_from_start: 4.0
 
     restaurant_handover:
