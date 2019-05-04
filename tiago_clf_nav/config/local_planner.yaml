@@ -30,7 +30,7 @@ TrajectoryPlannerROS:
 # We'll configure how long and with what granularity we'll forward simulate trajectories  
   sim_time: 1.6                     # 1.6 -- setting it higher can result in slightly smoother trajectories
   sim_granularity: 0.025            # 0.025
-  angular_sim_granularity: 0.025    # 0.025
+  angular_sim_granularity: 0.05    # 0.025
   vx_samples: 10                    # 3
   vtheta_samples: 20                # 20
 
