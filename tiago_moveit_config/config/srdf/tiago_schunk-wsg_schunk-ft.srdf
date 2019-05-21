@@ -80,6 +80,15 @@
         <joint name="arm_6_joint" value="1.44"/>
         <joint name="arm_7_joint" value="0.84"/>
     </group_state>
+    <group_state name="grasping" group="arm">
+        <joint name="arm_1_joint" value="0.21" />
+        <joint name="arm_2_joint" value="-0.74" />
+        <joint name="arm_3_joint" value="-3.21" />
+        <joint name="arm_4_joint" value="2.29" />
+        <joint name="arm_5_joint" value="0.16" />
+        <joint name="arm_6_joint" value="-0.12" />
+        <joint name="arm_7_joint" value="0.84" />
+    </group_state>
     <group_state name="transport2" group="arm_torso">
         <joint name="torso_lift_joint" value="0.23"/>
         <joint name="arm_1_joint" value="0.19"/>
