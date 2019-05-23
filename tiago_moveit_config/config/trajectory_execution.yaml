@@ -1,0 +1,19 @@
+trajectory_execution:
+  # "Monitor the execution duration of a trajectory. If expected duration is exceeded, the trajectory is canceled.
+  allowed_execution_duration_scaling: 2 #default 1.2
+  # Accept durations that take a little more time than specified
+  allowed_goal_duration_margin: 1 #default 0.5
+  # Allow more than the expected execution time before triggering a trajectory cancel (applied after scaling)
+  execution_duration_monitoring: True
+  # "Multiplicative factor for execution speed
+  execution_velocity_scaling: 1
+  # Allowed joint-value tolerance for validation of trajectory's start point against current robot state
+  allowed_start_tolerance: 0.05 #default 0.01
+  # Wait for trajectory completion. If set to false, do not wait for controllers to converge to last way point, before reporting success.
+  wait_for_trajectory_completion: True
+  
+  ## Moveit Fork
+  # Wait for the robot to stop after trajectory part completion. If set to false, execute next part as soon as controllers tell us they finished
+  wait_for_stop_on_trajectory_part_completion: True #default false
+  # add this time to time_from_start for each trajector
+  trajectory_start_time: 0.4 #default 0.0
