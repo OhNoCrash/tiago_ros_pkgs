@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="arm"/>
+  <arg name="end_effector"/>
+  <arg name="ft_sensor"/>
+  <arg name="file_suffix" value="$(eval ('no-arm' if not arm else end_effector+ ('' if not ft_sensor else '_'+ft_sensor)))"/>
+
+  <!-- Load Poses -->
+  <rosparam command="load" file="$(find tiago_clf_launch)/config/tiago_motions.yaml" />
+
+  <node pkg="play_motion" type="play_motion" name="play_motion">
+    <rosparam file="$(find tiago_bringup)/config/approach_planner/approach_planner_$(arg file_suffix).yaml" command="load" />
+  </node>
+  
+</launch>
