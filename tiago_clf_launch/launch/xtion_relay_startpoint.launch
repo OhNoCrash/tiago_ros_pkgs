@@ -1,0 +1,28 @@
+<launch>
+
+  <arg name="camera_name" default="xtion" />
+  <arg name="remapped_tf" default="/tf" />
+
+  <arg name="node_name" default="$(arg camera_name)" />
+
+  <node pkg="opportunistic_link" type="request_camera_link_startpoint" name="$(arg node_name)_camera_link_startpoint" output="screen" >
+    <param name="camera_topic" type="string" value="$(arg camera_name)/rgb/image" />
+    <param name="data_service" type="string" value="$(arg camera_name)/rgb/data" />
+    <remap from="/tf" to="$(arg remapped_tf)" />
+  </node>
+
+  <node pkg="opportunistic_link" type="request_pointcloud_link_startpoint" name="$(arg node_name)_pointcloud_link_startpoint" output="screen" >
+    <param name="pointcloud_topic" type="string" value="$(arg camera_name)/depth/points" />
+    <param name="compression_type" type="string" value="PC30" />
+    <param name="data_service" type="string" value="$(arg camera_name)/depth/data" />
+    <remap from="/tf" to="$(arg remapped_tf)" />
+  </node>
+
+  <node pkg="opportunistic_link" type="request_pointcloud_link_startpoint" name="$(arg node_name)_rgbpointcloud_link_startpoint" output="screen" >
+    <param name="pointcloud_topic" type="string" value="$(arg camera_name)/depth_registered/points" />
+    <param name="compression_type" type="string" value="ZLIB" />
+    <param name="data_service" type="string" value="$(arg camera_name)/depth_registered/data" />
+    <remap from="/tf" to="$(arg remapped_tf)" />
+  </node>
+
+</launch>

@@ -1,0 +1,49 @@
+<launch>
+
+  <arg name="camera_name" default="xtion" />
+  <arg name="output" default="screen" />
+  <arg name="remapped_tf" default="/tf" />
+  <arg name="default_rate" default="15.0" />
+  <arg name="quality" default="10" />
+  <arg name="override_timestamps" default="false" />
+  <arg name="filter_size" default="0.02" />
+
+  <arg name="node_name" default="$(arg camera_name)" />
+
+  <node pkg="opportunistic_link" type="request_camera_link_endpoint" name="$(arg node_name)_camera_link_endpoint" output="$(arg output)" >
+    <param name="relay_topic" type="string" value="$(arg camera_name)/relay/rgb/image" />
+    <param name="latched" type="bool" value="true" />
+    <param name="default_rate" type="double" value="$(arg default_rate)" />
+    <param name="default_quality" type="int" value="$(arg quality)" />
+    <param name="quality_ctrl" type="string" value="$(arg camera_name)/rgb/quality" />
+    <param name="rate_ctrl" type="string" value="$(arg camera_name)/rgb/rate" />
+    <param name="data_service" type="string" value="$(arg camera_name)/rgb/data" />
+    <param name="override_timestamps" type="bool" value="$(arg override_timestamps)" />
+    <remap from="/tf" to="$(arg remapped_tf)" />
+  </node>
+
+  <node pkg="opportunistic_link" type="request_pointcloud_link_endpoint" name="$(arg node_name)_pointcloud_link_endpoint" output="$(arg output)" >
+    <param name="relay_topic" type="string" value="$(arg camera_name)/relay/depth/points" />
+    <param name="latched" type="bool" value="true" />
+    <param name="default_rate" type="double" value="$(arg default_rate)" />
+    <param name="default_filter_size" type="double" value="$(arg filter_size)" />
+    <param name="filter_ctrl" type="string" value="$(arg camera_name)/depth/quality" />
+    <param name="rate_ctrl" type="string" value="$(arg camera_name)/depth/rate" />
+    <param name="data_service" type="string" value="$(arg camera_name)/depth/data" />
+    <param name="override_timestamps" type="bool" value="$(arg override_timestamps)" />
+    <remap from="/tf" to="$(arg remapped_tf)" />
+  </node>
+
+  <node pkg="opportunistic_link" type="request_pointcloud_link_endpoint" name="$(arg node_name)_rgbpointcloud_link_endpoint" output="$(arg output)" >
+    <param name="relay_topic" type="string" value="$(arg camera_name)/relay/depth_registered/points" />
+    <param name="latched" type="bool" value="true" />
+    <param name="default_rate" type="double" value="$(arg default_rate)" />
+    <param name="default_filter_size" type="double" value="$(arg filter_size)" />
+    <param name="filter_ctrl" type="string" value="$(arg camera_name)/depth_registered/quality" />
+    <param name="rate_ctrl" type="string" value="$(arg camera_name)/depth_registered/rate" />
+    <param name="data_service" type="string" value="$(arg camera_name)/depth_registered/data" />
+    <param name="override_timestamps" type="bool" value="$(arg override_timestamps)" />
+    <remap from="/tf" to="$(arg remapped_tf)" />
+  </node>
+
+</launch>
