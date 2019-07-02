@@ -1,0 +1,36 @@
+<launch>
+
+    <arg name="sim" default="false"/>
+
+    <!-- Load PlayMotion Navigation Pose -->
+    <rosparam command="load" file="$(find tiago_clf_nav)/config/tiago_nav_motions.yaml" />
+
+    <!-- Run move_base -->
+    <node pkg="move_base" type="move_base" respawn="true" clear_params="true" name="move_base" output="screen">
+        <remap from="cmd_vel" to="nav_vel"/>
+        <remap from="odom"    to="mobile_base_controller/odom"/>
+
+        <rosparam file="$(find tiago_clf_nav)/config/simple/move_base.yaml" command="load" />
+
+        <rosparam file="$(find tiago_clf_nav)/config/simple/costmap.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find tiago_clf_nav)/config/simple/global_costmap.yaml" command="load" />
+
+        <rosparam file="$(find tiago_clf_nav)/config/simple/costmap.yaml" command="load" ns="local_costmap" />
+        <rosparam if="$(arg sim)" file="$(find tiago_clf_nav)/config/local_costmap_sim.yaml" command="load" />
+        <rosparam unless="$(arg sim)" file="$(find tiago_clf_nav)/config/simple/local_costmap.yaml" command="load" />
+
+        <rosparam if="$(arg sim)" file="$(find tiago_clf_nav)/config/local_planner_sim.yaml" command="load" />
+        <rosparam unless="$(arg sim)" file="$(find tiago_clf_nav)/config/simple/local_planner.yaml" command="load" />
+
+        <rosparam file="$(find tiago_clf_nav)/config/simple/global_planner.yaml" command="load" />
+
+    </node>
+    
+    <!-- Start laser filters -->
+    <group if="$(arg sim)"> <!-- started on robot pal_startup/clf_lase_filters -->
+        <include file="$(find tiago_clf_nav)/launch/filters.launch">
+            <arg name="sim" value="$(arg sim)"/>
+        </include>
+    </group>
+
+</launch>

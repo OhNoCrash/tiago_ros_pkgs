@@ -1,0 +1,47 @@
+#move base
+planner_frequency: 1.0
+planner_patience : 0.5
+
+controller_frequency: 10.0
+controller_patience :  3.0
+
+oscillation_timeout : 10.0
+oscillation_distance:  0.2
+
+recovery_behavior_enabled: true
+shutdown_costmaps        : false
+
+search_alternative_goals: true
+alternative_goals_thresh: 0.5
+
+#recovery
+recovery_behaviors:
+  - {name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery} # biron
+  - {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}
+  #- {name: 'rotate_90', type: rotate_recovery/RotateRecovery}
+  
+  #- {name: 'rotate_180', type: rotate_recovery/RotateRecovery}
+
+aggressive_reset:
+  reset_distance: 0.0
+  layer_names: ["obstacle_sonar_layer", "obstacle_laser_layer", "obstacle_layer", "rgbd_obstacle_layer"]
+
+conservative_reset:
+  layer_names: ["obstacle_sonar_layer", "rgbd_obstacle_layer"]
+  reset_distance: 5.0
+
+rotate_90:
+  max_vel_theta: 0.6
+  goal_angle: 1.57
+
+rotate_180:
+  max_vel_theta: 0.6
+  goal_angle: 3.1415
+
+### Biron
+#controller_frequency: 10.0 #20.0 control the base in hz
+#controller_patience: 1.5 #15.0 wait seconds for control
+#planner_patience: 0.8 #5.0 wait seconds for plan
+#planner_frequency: 0.5 #0.0 only plan on problems
+clearing_rotation_allowed: false #defualt: true with false: avoid the dreaded rosroll?
+
