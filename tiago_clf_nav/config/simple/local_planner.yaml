@@ -22,8 +22,8 @@ TrajectoryPlannerROS:
   holonomic_robot: false            # true
 
 # ---- Goal tolerance parameters
-  yaw_goal_tolerance: 0.2           # 0.25 rad = ~15 degree 
-  xy_goal_tolerance: 0.1           # 0.2
+  yaw_goal_tolerance: !degrees 15  
+  xy_goal_tolerance: 0.2           # 0.2
   latch_xy_goal_tolerance: false     # false  -- If goal tolerance is latched, if the robot ever reaches the goal xy location it will simply rotate in place, even if it ends up outside the goal tolerance while it is doing so.
   
 # ---- Foward simulation parameters
