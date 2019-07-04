@@ -6,7 +6,7 @@
     <rosparam command="load" file="$(find tiago_clf_nav)/config/tiago_nav_motions.yaml" />
 
     <!-- Run move_base -->
-    <node pkg="move_base" type="move_base" respawn="true" name="move_base" output="screen">
+    <node pkg="move_base" type="move_base" respawn="true" clear_params="true" name="move_base" output="screen">
         <remap from="cmd_vel" to="nav_vel"/>
         <remap from="odom"    to="mobile_base_controller/odom"/>
 
