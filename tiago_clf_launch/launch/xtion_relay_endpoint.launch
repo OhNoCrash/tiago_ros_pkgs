@@ -4,9 +4,9 @@
   <arg name="output" default="screen" />
   <arg name="remapped_tf" default="/tf" />
   <arg name="default_rate" default="15.0" />
-  <arg name="quality" default="10" />
+  <arg name="quality" default="100" />
   <arg name="override_timestamps" default="false" />
-  <arg name="filter_size" default="0.02" />
+  <arg name="filter_size" default="0.01" />
 
   <arg name="node_name" default="$(arg camera_name)" />
 
