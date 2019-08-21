@@ -1,5 +1,5 @@
 # Odometry model:
-odom_model_type: diff-corrected
+odom_model_type: diff
 # reduced https://answers.ros.org/question/227811/tuning-amcls-diff-corrected-and-omni-corrected-odom-models/
 odom_alpha1    : 0.2  # Specifies the expected noise in odometry's rotation estimate from the rotational component of the robot's motion.
 odom_alpha2    : 0.2  # Specifies the expected noise in odometry's rotation estimate from translational component of the robot's motion.
