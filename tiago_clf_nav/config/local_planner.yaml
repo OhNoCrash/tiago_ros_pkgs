@@ -5,11 +5,11 @@ base_local_planner: clf_local_planner/TrajectoryPlannerROS
 TrajectoryPlannerROS:
 
 # Set the acc.eleration limits of the robot - "most important thing"
-  acc_lim_x: 0.6                    
+  acc_lim_x: 0.2                    
   acc_lim_theta: !degrees 70.0      
 
 # Set the velocity limits of the robot
-  max_vel_x: 0.55                   
+  max_vel_x: 0.5                   
   min_vel_x: 0.0                  
   max_vel_theta: !degrees 80.0      
   min_vel_theta: !degrees -80.0               
@@ -38,8 +38,8 @@ TrajectoryPlannerROS:
 # ---- Parameters for scoring trajectories
   meter_scoring: true              # false -- distance in meter or cells
   pdist_scale: 2.0                  # 
-  gdist_scale: 4.85                  # 
-  occdist_scale: 0.01               # 0.01 -- weighting how much controller should avoid obstacles
+  gdist_scale: 3.75                  # 
+  occdist_scale: 0.02               # 0.01 -- weighting how much controller should avoid obstacles
   heading_lookahead: 0.325          # 0.325
   heading_scoring: false            # false
   heading_scoring_timestep: 0.8     # 0.8 -- only with heading_scoring true
