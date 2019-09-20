@@ -10,7 +10,7 @@ TrajectoryPlannerROS:
 
 # Set the velocity limits of the robot
   max_vel_x: 0.5                   
-  min_vel_x: 0.1                  
+  min_vel_x: 0.05                  
   max_vel_theta: 1.4      
   min_vel_theta: -1.4               
   min_in_place_vel_theta: !degrees 45.0 
@@ -23,7 +23,7 @@ TrajectoryPlannerROS:
 
 # ---- Goal tolerance parameters
   yaw_goal_tolerance: 0.2           # 0.25 rad = ~15 degree 
-  xy_goal_tolerance: 0.05           # 0.2
+  xy_goal_tolerance: 0.1           # 0.2
   latch_xy_goal_tolerance: true # false  -- If goal tolerance is latched, if the robot ever reaches the goal xy location it will simply rotate in place, even if it ends up outside the goal tolerance while it is doing so.
   
 # ---- Foward simulation parameters
