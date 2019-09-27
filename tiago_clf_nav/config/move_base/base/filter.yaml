@@ -14,11 +14,10 @@ scan_filter_chain:
     neighbors: 5 #3
     window: 1
 
-# From tiago_laser_sensors
 - name: footprint_filter
-  type: laser_filters/LaserScanFootprintFilter
+  type: LaserScanFootprintFilter
   params:
-    inscribed_radius: 0.30
+    inscribed_radius: 0.24
 
 - name: range
   type: laser_filters/LaserScanRangeFilter
