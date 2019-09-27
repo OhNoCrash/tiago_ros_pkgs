@@ -4,9 +4,6 @@
     <arg if="$(arg sim)" name="config" default="sim"/>
     <arg unless="$(arg sim)" name="config" default="base"/>
 
-    <arg name="file" default="$(find tiago_clf_nav)/config/move_base/$(arg config)/move_base.yaml"/>
-    <param name="FILE" value="$(eval file)"/>
-
     <!-- Load PlayMotion Navigation Pose -->
     <rosparam command="load" file="$(find tiago_clf_nav)/config/tiago_nav_motions.yaml" />
 
