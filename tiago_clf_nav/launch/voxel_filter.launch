@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-  <arg name="topic" default="/xtion/depth_registered/points" />
+  <arg name="topic" default="/xtion/depth/points" />
   <arg name="take_nav_pose" default="true"/>
   
   <rosparam file="$(find tiago_clf_nav)/config/tiago_nav_motions.yaml" command="load" />
   
   <!-- Run a VoxelGrid filter to clean NaNs and downsample the data -->
-  <node pkg="nodelet" type="nodelet" respawn="true" name="voxel_grid" args="standalone pcl/VoxelGrid" output="screen">
+  <node pkg="nodelet" type="nodelet" respawn="true" name="voxel_grid" args="load pcl/VoxelGrid  /xtion/xtion_nodelet_manager" output="screen">
     <remap from="~input" to="$(arg topic)" />
     <rosparam>
-      filter_field_name: z
-      filter_limit_min: 0.3
-      filter_limit_max: 2.2
-      filter_limit_negative: False
       leaf_size: 0.05
     </rosparam>
   </node>
