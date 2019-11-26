@@ -24,7 +24,7 @@ TrajectoryPlannerROS:
 
 # ---- Goal tolerance parameters
   yaw_goal_tolerance: 0.2           # 0.25 rad = ~15 degree 
-  xy_goal_tolerance: 0.1           # 0.2
+  xy_goal_tolerance: 0.05           # 0.2
   latch_xy_goal_tolerance: true     # false  -- If goal tolerance is latched, if the robot ever reaches the goal xy location it will simply rotate in place, even if it ends up outside the goal tolerance while it is doing so.
   
 # ---- Foward simulation parameters
@@ -40,10 +40,10 @@ TrajectoryPlannerROS:
 # ---- Parameters for scoring trajectories
   meter_scoring: true              # false -- distance in meter or cells
   pdist_scale: 2.0                  # 
-  gdist_scale: 0.85                  # 
-  occdist_scale: 0.02               # 0.01 -- weighting how much controller should avoid obstacles
+  gdist_scale: 4.85                  # 
+  occdist_scale: 0.01               # 0.01 -- weighting how much controller should avoid obstacles
   heading_lookahead: 0.325          # 0.325
-  heading_scoring: true             # false
+  heading_scoring: false             # false
   heading_scoring_timestep: 0.8     # 0.8 -- only with heading_scoring true
   dwa: false                         # true -- false if robot has low acceleration limits
   publish_cost_grid_pc: true        # false
