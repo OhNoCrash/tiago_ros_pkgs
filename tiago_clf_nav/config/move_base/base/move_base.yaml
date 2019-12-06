@@ -1,5 +1,5 @@
 #move base
-actionlib_status_frequency: 0.0 # frequency at which status of action server is published on topic
+#actionlib_status_frequency: 0.0 # frequency at which status of action server is published on topic
 
 planner_frequency: 2.0
 planner_patience : 0.5
