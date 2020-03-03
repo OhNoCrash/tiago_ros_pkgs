@@ -48,6 +48,7 @@
     <group name="gripper">
         <link name="cupro_finger_r_1_finger_link" />
         <link name="cupro_finger_l_1_finger_link" />
+        <link name="cupro_finger_r_2_finger_link" />
         <link name="cupro_finger_mount_l_platte_link" />
         <link name="cupro_finger_mount_r_platte_link" />
         <link name="gripper_left_finger_link" />
@@ -127,11 +128,6 @@
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="robot_map" type="planar" parent_frame="map" child_link="base_link" />
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
-    <passive_joint name="cupro_finger_mount_l_platte_joint" />
-    <passive_joint name="cupro_finger_mount_r_platte_joint" />
-    <passive_joint name="gripper_right_finger_joint" />
-    <passive_joint name="gripper_finger_joint" />
-    <passive_joint name="suspension_right_joint" />
     <passive_joint name="caster_front_right_2_joint" />
     <passive_joint name="caster_front_right_1_joint" />
     <passive_joint name="caster_front_left_2_joint" />
