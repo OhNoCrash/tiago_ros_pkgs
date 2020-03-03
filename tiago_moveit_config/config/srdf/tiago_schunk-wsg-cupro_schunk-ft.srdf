@@ -46,8 +46,8 @@
         <joint name="gripper_finger_joint" />
     </group>
     <group name="gripper">
-        <link name="cupro_finger_r_1_finger_link" />
         <link name="cupro_finger_l_1_finger_link" />
+        <link name="cupro_finger_r_1_finger_link" />
         <link name="cupro_finger_r_2_finger_link" />
         <link name="cupro_finger_mount_l_platte_link" />
         <link name="cupro_finger_mount_r_platte_link" />
@@ -551,6 +551,7 @@
     <disable_collisions link1="caster_back_left_1_link" link2="cupro_finger_l_1_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_left_1_link" link2="cupro_finger_mount_l_platte_link" reason="Never" />
     <disable_collisions link1="caster_back_left_1_link" link2="cupro_finger_mount_r_platte_link" reason="Never" />
+    <disable_collisions link1="caster_back_left_1_link" link2="cupro_finger_r_1_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_left_1_link" link2="cupro_finger_r_2_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_left_1_link" link2="gripper_left_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_left_1_link" link2="gripper_link" reason="Never" />
@@ -573,6 +574,7 @@
     <disable_collisions link1="caster_back_left_2_link" link2="cupro_finger_l_1_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_left_2_link" link2="cupro_finger_mount_l_platte_link" reason="Never" />
     <disable_collisions link1="caster_back_left_2_link" link2="cupro_finger_mount_r_platte_link" reason="Never" />
+    <disable_collisions link1="caster_back_left_2_link" link2="cupro_finger_r_1_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_left_2_link" link2="cupro_finger_r_2_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_left_2_link" link2="gripper_left_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_left_2_link" link2="gripper_link" reason="Never" />
@@ -613,6 +615,7 @@
     <disable_collisions link1="caster_back_right_2_link" link2="cupro_finger_l_1_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_right_2_link" link2="cupro_finger_mount_l_platte_link" reason="Never" />
     <disable_collisions link1="caster_back_right_2_link" link2="cupro_finger_mount_r_platte_link" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="cupro_finger_r_1_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_right_2_link" link2="cupro_finger_r_2_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_right_2_link" link2="gripper_left_finger_link" reason="Never" />
     <disable_collisions link1="caster_back_right_2_link" link2="gripper_link" reason="Never" />
