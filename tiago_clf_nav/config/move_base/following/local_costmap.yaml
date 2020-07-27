@@ -73,7 +73,7 @@ local_costmap:
     sensor_scan_clf:
       sensor_frame: base_laser_link
       data_type: LaserScan
-      topic: /scan_max
+      topic: /scan_clf
       expected_update_rate: 5.0
       observation_persistence: 1.0
       inf_is_valid: true
