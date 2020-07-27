@@ -1,5 +1,4 @@
 #local planner
-#base_local_planner: pal_local_planner/PalLocalPlanner
 base_local_planner: base_local_planner/TrajectoryPlannerROS
 
 ### Biron
@@ -7,13 +6,13 @@ TrajectoryPlannerROS:
 
 # Set the acc.eleration limits of the robot - "most important thing"
   acc_lim_x: 0.5                    
-  acc_lim_theta: !degrees 30.0      
+  acc_lim_theta: !degrees 70.0      
 
 # Set the velocity limits of the robot
   max_vel_x: 0.6                   
   min_vel_x: 0.0                  
-  max_vel_theta: !degrees 90.0      
-  min_vel_theta: !degrees -90.0               
+  max_vel_theta: !degrees 60.0      
+  min_vel_theta: !degrees -60.0               
   min_in_place_vel_theta: !degrees 45.0 
 
 # Notice that this velocity is set to be negative. A bit confusing admittedly.
@@ -23,8 +22,8 @@ TrajectoryPlannerROS:
   holonomic_robot: false            # true
 
 # ---- Goal tolerance parameters
-  yaw_goal_tolerance: 0.2           # 0.25 rad = ~15 degree 
-  xy_goal_tolerance: 0.05           # 0.2
+  yaw_goal_tolerance: 0.3           # 0.25 rad = ~15 degree 
+  xy_goal_tolerance: 0.2           # 0.2
   latch_xy_goal_tolerance: true     # false  -- If goal tolerance is latched, if the robot ever reaches the goal xy location it will simply rotate in place, even if it ends up outside the goal tolerance while it is doing so.
   
 # ---- Foward simulation parameters
