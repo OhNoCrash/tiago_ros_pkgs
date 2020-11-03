@@ -14,14 +14,38 @@ local_costmap:
   plugins:
     - name: obstacle_layer
       type: 'costmap_2d::CurrentObstacleLayer'
-    #- name: obstacle_sonar_layer
-    #  type: 'costmap_2d::NonPersistentVoxelLayer'
+    - name: obstacle_sonar_layer
+      type: 'range_sensor_layer::RangeSensorLayer'
     - name: rgbd_obstacle_layer
       type: 'spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer'
       #    - name: footprint_layer
       #      type: 'costmap_2d::FootprintLayer'
     - name: inflation_layer
       type: 'costmap_2d::InflationLayer'
+
+  obstacle_layer:
+    enabled: true
+    observation_sources: sensor_scan_clf 
+    sensor_scan_clf: 
+      sensor_frame: base_laser_link
+      data_type: LaserScan
+      topic: /scan_clf
+      expected_update_rate: 2.0
+      #observation_persistence: 1.0
+      inf_is_valid: true
+      marking: true
+      clearing: true
+      raytrace_range: 25.0
+      obstacle_range: 8.0
+
+  obstacle_sonar_layer:
+    enabled: false
+    ns: ""
+    topics: ["/sonar_base"]
+    no_readings_timeout: 0.0
+    clear_threshold: 0.20
+    mark_threshold: 0.80
+    clear_on_max_reading: true
 
   rgbd_obstacle_layer:
     enabled:               true
@@ -65,41 +89,6 @@ local_costmap:
       horizontal_fov_angle: 1.2   #default 1.04, radians
       decay_acceleration: 8.       #default 0, 1/s^2. If laser scanner MUST be 0
       model_type: 0                #default 0 (depth camera). Use 1 for 3D Lidar
-
-  obstacle_layer:
-    enabled: true
-    observation_sources: sensor_scan_clf #point_cloud_sensor1 point_cloud_sensor0
-    #combination_method: 0 # can erase static layer
-    #point_cloud_sensor0: {sensor_frame: xtion_link, data_type: PointCloud2, topic: /voxel_grid/output, marking: true, clearing: false, min_obstacle_height: 0.05}
-    #point_cloud_sensor1: {sensor_frame: xtion_link, data_type: PointCloud2, topic: /voxel_grid/output, marking: false, clearing: true, min_obstacle_height: -1.0}
-
-    sensor_scan_clf:
-      sensor_frame: base_laser_link
-      data_type: LaserScan
-      topic: /scan_clf
-      expected_update_rate: 2.0
-      #observation_persistence: 1.0
-      inf_is_valid: true
-      marking: true
-      clearing: true
-      raytrace_range: 25.0
-      obstacle_range: 8.0
-
-  obstacle_sonar_layer:
-    enabled: true
-    observation_sources: sonar_cloud
-    track_unknown_space:  true
-    mark_threshold:       0
-    publish_voxel_map: true
-    #combination_method: 1
-
-    sonar_cloud:
-      sensor_frame: base_link
-      data_type: PointCloud2
-      topic: sonar_cloud
-      marking: true
-      min_obstacle_height: -0.1
-      max_obstacle_height: 1.8
 
   footprint_layer:
     enabled: true
