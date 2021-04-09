@@ -95,5 +95,5 @@ local_costmap:
 
   inflation_layer:
     enabled            : true
-    inflation_radius   : 0.55
+    inflation_radius   : 0.7
     cost_scaling_factor: 5.0

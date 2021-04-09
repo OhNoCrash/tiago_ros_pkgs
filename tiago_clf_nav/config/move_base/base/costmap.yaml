@@ -3,7 +3,8 @@ map_type: costmap
 
 global_frame: map
 robot_base_frame: base_footprint
-robot_radius: 0.275
+robot_radius: 0.29
+footprint_padding: 0.02
 
 update_frequency : 5.0
 publish_frequency: 5.0
