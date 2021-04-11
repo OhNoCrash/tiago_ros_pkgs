@@ -31,9 +31,13 @@
         <joint name="arm_tool_joint" />
     </group>
     <group name="arm_torso_gripper">
+        <link name="cupro_finger_l_1_finger_link" />
+        <link name="cupro_finger_r_1_finger_link" />
+        <link name="cupro_finger_r_2_finger_link" />
+        <link name="cupro_finger_mount_l_platte_link" />
+        <link name="cupro_finger_mount_r_platte_link" />
         <link name="gripper_left_finger_link" />
         <link name="gripper_right_finger_link" />
-        <link name="gripper_link" />
         <joint name="torso_lift_joint" />
         <joint name="arm_1_joint" />
         <joint name="arm_2_joint" />
