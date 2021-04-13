@@ -5,15 +5,15 @@ base_local_planner: clf_local_planner/TrajectoryPlannerROS
 TrajectoryPlannerROS:
 
 # Set the acc.eleration limits of the robot - "most important thing"
-  acc_lim_x: 2.5                    
-  acc_lim_theta: !degrees 70.0      
+  acc_lim_x: 2.2                    
+  acc_lim_theta: !degrees 65.0      
 
 # Set the velocity limits of the robot
-  max_vel_x: 0.5                   
+  max_vel_x: 0.3                   
   min_vel_x: 0.05                  
-  max_vel_theta: 1.4      
-  min_vel_theta: -1.4               
-  min_in_place_vel_theta: !degrees 45.0 
+  max_vel_theta: 1.3      
+  min_vel_theta: -1.3               
+  min_in_place_vel_theta: !degrees 40.0 
 
 # Notice that this velocity is set to be negative. A bit confusing admittedly.
   escape_vel: -0.0                 # -0.1
