@@ -394,3 +394,17 @@ play_motion:
       points:
       - positions: [0.13873324027059786, -1.5007636211630797, -1.343287471655188, 1.6875307275767384, -1.5697704121696892, 1.3492987454117131, 0.7982477766211946]
         time_from_start: 4.0
+
+    transport:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
+      meta: {description: restaurant_handover, name: restaurant_handover, usage: demo}
+      points:
+      - positions: [0.41, -1.54, -0.61, 2.33, 0.16, 1.44, 0.84]
+        time_from_start: 4.0
+
+    home_carry:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, 'torso_lift_joint']
+      meta: {description: restaurant_handover, name: restaurant_handover, usage: demo}
+      points:
+      - positions: [0.2, -1.5007636211630797, -1.34, -0.2, -1.57, 1.25, -2, 0.15]
+        time_from_start: 4.0
