@@ -418,3 +418,13 @@ play_motion:
         name: grasping_carry
         usage: demo
         description: 'grasp carry'
+
+    grasping_high:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
+      points:
+      - positions: [0.08, 0.44, -3.23, 1.64, 0.16, -0.12, 0.84]
+        time_from_start: 2.0
+      meta:
+        name: grasping_high
+        usage: demo
+        description: 'grasphigh'
