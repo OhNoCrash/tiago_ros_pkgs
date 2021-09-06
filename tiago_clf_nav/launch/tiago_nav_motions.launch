@@ -6,14 +6,6 @@
   
   <rosparam file="$(find tiago_clf_nav)/config/tiago_nav_motions.yaml" command="load" />
   
-  <!-- Run a VoxelGrid filter to clean NaNs and downsample the data -->
-  <node pkg="nodelet" type="nodelet" respawn="true" name="voxel_grid" args="load pcl/VoxelGrid  /xtion/xtion_nodelet_manager" output="screen">
-    <remap from="~input" to="$(arg topic)" />
-    <rosparam>
-      leaf_size: 0.05
-    </rosparam>
-  </node>
-  
   <group if="$(arg take_nav_pose)">
        <node name="take_nav_pose" pkg="tiago_clf_nav" type="nav_pose.py" output="screen"/>
   </group>

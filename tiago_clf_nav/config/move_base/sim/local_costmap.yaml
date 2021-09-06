@@ -44,7 +44,7 @@ local_costmap:
     observation_sources:   rgbd1_clear rgbd1_mark
     rgbd1_mark:
       data_type: PointCloud2
-      topic: /voxel_grid/output
+      topic: /xtion/filtered/points
       marking: true
       clearing: false
       min_obstacle_height: 0.1     #default 0, meters
@@ -56,7 +56,7 @@ local_costmap:
       voxel_filter: true           #default off, apply voxel filter to sensor, recommend on 
     rgbd1_clear:
       data_type: PointCloud2
-      topic: /voxel_grid/output
+      topic: /xtion/filtered/points
       marking: false
       clearing: true
       min_z: 0.1                   #default 0, meters
@@ -70,8 +70,8 @@ local_costmap:
     enabled: true
     observation_sources: sensor_scan_clf #point_cloud_sensor1 point_cloud_sensor0
     #combination_method: 0 # can erase static layer
-    #point_cloud_sensor0: {sensor_frame: xtion_link, data_type: PointCloud2, topic: /voxel_grid/output, marking: true, clearing: false, min_obstacle_height: 0.05}
-    #point_cloud_sensor1: {sensor_frame: xtion_link, data_type: PointCloud2, topic: /voxel_grid/output, marking: false, clearing: true, min_obstacle_height: -1.0}
+    #point_cloud_sensor0: {sensor_frame: xtion_link, data_type: PointCloud2, topic: /xtion/filtered/points, marking: true, clearing: false, min_obstacle_height: 0.05}
+    #point_cloud_sensor1: {sensor_frame: xtion_link, data_type: PointCloud2, topic: /xtion/filtered/points, marking: false, clearing: true, min_obstacle_height: -1.0}
 
     sensor_scan_clf:
       sensor_frame: base_laser_link

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <arg name="topic" default="/xtion/depth/points" />
+
+  <!-- Run a VoxelGrid filter to clean NaNs and downsample the data -->
+  <node pkg="nodelet" type="nodelet" respawn="true" name="voxel_grid" args="load pcl/VoxelGrid  /xtion/xtion_nodelet_manager" output="screen">
+    <remap from="~input" to="$(arg topic)" />
+    <remap from="~output" to="/xtion/filtered/points" />
+    <rosparam>
+      leaf_size: 0.05
+    </rosparam>
+  </node>
+
+</launch>
