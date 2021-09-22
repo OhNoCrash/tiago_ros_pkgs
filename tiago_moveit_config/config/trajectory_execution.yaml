@@ -8,7 +8,7 @@ trajectory_execution:
   # "Multiplicative factor for execution speed
   execution_velocity_scaling: 1
   # Allowed joint-value tolerance for validation of trajectory's start point against current robot state
-  allowed_start_tolerance: 0.05 #default 0.01
+  allowed_start_tolerance: 0.04 #default 0.01
   # Wait for trajectory completion. If set to false, do not wait for controllers to converge to last way point, before reporting success.
   wait_for_trajectory_completion: True
   
