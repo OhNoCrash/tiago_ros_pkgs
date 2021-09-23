@@ -5,8 +5,50 @@
 <node pkg="tf2_ros" type="static_transform_publisher" name="camera_link" args="0.076 0.176 0.021 -0.707 0.006 -0.006 0.707 head_2_link camera_link" />
 
 
-<include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
-   <arg name="rgb" value="color" />
+<include file="$(find realsense2_camera)/launch/rs_camera.launch">
+   <!-- <arg name="rgb" value="color" /> -->
+   <arg name="depth_fps" value="10"/>
+   <arg name="color_fps" value="10"/>
+   <arg name="align_depth" value="true"/>
+   <arg name="enable_sync" value="true"/>
+   <arg name="initial_reset" value="true"/>
 </include>
+
+ <group ns="camera">
+   <include file="$(find rgbd_launch)/launch/includes/rgb.launch.xml">
+      <arg name="manager"                       value="realsense2_camera_manager" />
+      <arg name="respawn"                       value="false" />
+      <arg name="rgb"                           value="color" />
+      <arg name="debayer_processing"            value="false" />
+    </include>
+
+   <!-- Publish registered XYZRGB point cloud with hardware registered input (ROS Realsense depth alignment) -->
+   <node pkg="nodelet" type="nodelet" name="points_xyzrgb_hw_registered"
+         args="load depth_image_proc/point_cloud_xyzrgb realsense2_camera_manager false" respawn="false">
+      <remap from="rgb/image_rect_color"        to="color/image_rect_color" />
+      <remap from="rgb/camera_info"             to="color/camera_info" />
+      <remap from="depth_registered/image_rect" to="aligned_depth_to_color/image_raw" />
+      <remap from="depth_registered/points"     to="depth_registered/points" />
+   </node>
+</group>
+
+<rosparam>
+   /camera/rgb_camera/power_line_frequency: 3
+   /camera/rgb_camera/global_time_enabled: true
+
+   /camera/l500_depth_sensor/visual_preset: 5
+   /camera/l500_depth_sensor/laser_power: 80
+   /camera/l500_depth_sensor/confidence_threshold: 2
+   /camera/l500_depth_sensor/min_distance: 250
+   /camera/l500_depth_sensor/receiver_gain: 12
+   /camera/l500_depth_sensor/post_processing_sharpening: 2
+   /camera/l500_depth_sensor/pre_processing_sharpening: 3
+   /camera/l500_depth_sensor/receiver_gain: 12
+   /camera/l500_depth_sensor/noise_filtering: 5
+   /camera/l500_depth_sensor/digital_gain: 2
+
+   /camera/l500_depth_sensor/global_time_enabled: true
+</rosparam>
+ 
 
 </launch>
