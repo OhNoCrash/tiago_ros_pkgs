@@ -11,7 +11,7 @@
    <arg name="color_fps" value="10"/>
    <arg name="align_depth" value="true"/>
    <arg name="enable_sync" value="true"/>
-   <arg name="initial_reset" value="true"/>
+   <arg name="initial_reset" value="false"/>
 </include>
 
  <group ns="camera">
