@@ -1,5 +1,5 @@
 <launch>
- <arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager"/>
+ <arg name="moveit_controller_manager" default="moveit_ros_control_interface::MoveItControllerManager"/>
  <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
  <arg name="controller_manager_name" default="controller_manager" />
  <param name="controller_manager_name" value="$(arg controller_manager_name)" />
