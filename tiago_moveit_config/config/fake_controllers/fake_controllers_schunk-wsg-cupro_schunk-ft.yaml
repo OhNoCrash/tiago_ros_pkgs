@@ -1,5 +1,6 @@
 controller_list:
-  - name: fake_arm_controller
+  - name: arm_controller
+    default: true
     joints:
       - arm_1_joint
       - arm_2_joint
@@ -8,6 +9,19 @@ controller_list:
       - arm_5_joint
       - arm_6_joint
       - arm_7_joint
+  - name: gripper_controller
+    default: true
+    joints:
+      - gripper_finger_joint
+  - name: fake_head_controller
+    joints:
+      - head_1_joint
+      - head_2_joint
+  - name: torso_controller
+    default: true
+    joints:
+      - torso_lift_joint
+
   - name: fake_arm_torso_controller
     joints:
       - torso_lift_joint
@@ -29,16 +43,6 @@ controller_list:
       - arm_6_joint
       - arm_7_joint
       - gripper_finger_joint
-  - name: fake_gripper_controller
-    joints:
-      - gripper_finger_joint
-  - name: fake_head_controller
-    joints:
-      - head_1_joint
-      - head_2_joint
-  - name: fake_torso_controller
-    joints:
-      - torso_lift_joint
       
 initial:
   - group: arm
