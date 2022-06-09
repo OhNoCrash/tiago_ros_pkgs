@@ -3,8 +3,10 @@
 
 	<arg name="sim" default="false"/>
     <arg name="sonar_topic" default="sonar_cloud"/>
-    <arg name="map_file" default="clf.yaml" />
-    <arg name="map" default="$(arg map_file)" />
+    <arg name="map_file" default="centralLab.yaml" />
+    
+    <arg unless="$(arg sim)" name="map" default="$(find tiago_clf_nav)/maps/real/$(arg map_file)"/>
+    <arg if="$(arg sim)" name="map" default="$(find tiago_clf_nav)/maps/sim/$(arg map_file)"/>
 
     <!-- Start map server -->
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)"/>

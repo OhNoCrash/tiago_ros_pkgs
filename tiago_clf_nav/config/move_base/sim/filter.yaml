@@ -14,8 +14,6 @@ scan_filter_chain:
     neighbors: 5 #3
     window: 1
 
-
-
 - name: range
   type: laser_filters/LaserScanRangeFilter
   params:

@@ -39,22 +39,8 @@ global_costmap:
       raytrace_range: 15.0
       obstacle_range: 8.0
 
-  #footprint_layer:
-  #  enabled: true
-
   inflation_layer:
     enabled            : true
     inflation_radius   : 0.7
     cost_scaling_factor: 15
-
-### Biron
-# commons
-#max_obstacle_range: 3.0
-#raytrace_range: 5.5
-
-#inflation_radius: 0.90
-#update_frequency: 5.0      # default 5.0
-#publish_frequency: 5.0      # default 0.0
-#cost_scaling_factor: 3.0    # default 10.0
-  
 
