@@ -82,7 +82,6 @@
 				      move_group/MoveGroupStateValidationService
 				      move_group/MoveGroupGetPlanningSceneService
               move_group/ClearOctomapService
-              moveit_monitoring/Monitoring
               move_group/ExecuteTaskSolutionCapability
 				      " />
 
