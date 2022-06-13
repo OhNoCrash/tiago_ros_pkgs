@@ -12,12 +12,13 @@
    <arg name="align_depth" value="true"/>
    <arg name="enable_sync" value="true"/>
    <arg name="initial_reset" value="false"/>
+   <arg name="respawn" value="true"/>
 </include>
 
  <group ns="camera">
    <include file="$(find rgbd_launch)/launch/includes/rgb.launch.xml">
       <arg name="manager"                       value="realsense2_camera_manager" />
-      <arg name="respawn"                       value="false" />
+      <arg name="respawn"                       value="true" />
       <arg name="rgb"                           value="color" />
       <arg name="debayer_processing"            value="false" />
     </include>
