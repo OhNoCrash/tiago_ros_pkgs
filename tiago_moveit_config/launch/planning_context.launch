@@ -37,6 +37,7 @@
     <rosparam command="load" file="$(find tiago_moveit_config)/config/joint_limits.yaml"/>
     <!-- Load padding -->
     <rosparam command="load" file="$(find tiago_moveit_config)/config/padding.yaml" />
+    <param name="default_velocity_scaling_factor" value="1.0"/>
   </group>
 
   <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
