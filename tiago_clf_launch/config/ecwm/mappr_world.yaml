@@ -1,0 +1,10 @@
+entities:
+- name: test1
+  type: misc/annotation
+  pose: {x: 0, y: 1, zw: 2}
+- name: test2
+  type: misc/annotation
+  pose: {x: 0, y: -1, zw: 0}
+- name: test3
+  type: misc/annotation
+  pose: {x: 2, y: 2, zw: 0}

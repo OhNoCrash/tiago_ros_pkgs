@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="config" default="mappr_config.yaml"/>
+    <arg name="world" default="mappr_world.yaml"/>
+    <arg name="plugins" default="mappr_plugins.yaml"/>
+
+	<node name="ecwm" pkg="ecwm_core" type="ecwm" output="screen" clear_params="true">
+        <rosparam command="load" file="$(find tiago_clf_launch)/config/ecwm/$(arg plugins)" />
+        <rosparam command="load" file="$(find tiago_clf_launch)/config/ecwm/$(arg config)" />
+        <param name="world_file" value="$(find tiago_clf_launch)/config/ecwm/$(arg world)" />
+        <param name="models_path" value="$(find tiago_clf_launch)/config/ecwm/models" /> 
+    </node> 
+
+</launch>

@@ -1,0 +1,21 @@
+generator_plugins:
+  - type: ecwm::LinkLoader
+  - type: ecwm::AffordanceLoader
+  - type: ecwm::SpiritLoader
+
+world_plugins:
+  - type: ecwm::AffordanceViz
+  - type: ecwm::WorldServices
+  - type: ecwm::TransformPublisher
+  - type: ecwm::SpiritNavigation
+
+## Plugin configs
+
+AffordanceViz:
+  viz_filter: False
+  viz_filter_name: nav
+
+SpiritLoader:
+  default_cam_height: 1.3
+  default_frame_suffix: forward
+  
