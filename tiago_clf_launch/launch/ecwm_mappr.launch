@@ -9,7 +9,7 @@
         <rosparam command="load" file="$(find tiago_clf_launch)/config/ecwm/$(arg plugins)" />
         <rosparam command="load" file="$(find tiago_clf_launch)/config/ecwm/$(arg config)" />
         <param name="world_file" value="$(find tiago_clf_launch)/config/ecwm/$(arg world)" />
-        <param name="models_path" value="$(find tiago_clf_launch)/config/ecwm/models" /> 
+        <param name="models_path" value="$(find tiago_clf_launch)/config/ecwm/models:$(find ecwm_cupro)/models" /> 
     </node> 
 
 </launch>

@@ -2,6 +2,12 @@ spirits:
   - name: viewpoint
     pose: {x: 0, y: 0, z: 0}
     frame_id_suffix: "/forward"
+    size: 20
+    resolution: 0.02
+    circular: True
   - name: look_down
     pose: {x: 0, y: 0, z: 0}
     frame_id_suffix: "/ground"
+    size: 20
+    resolution: 0.02
+    circular: True

@@ -7,4 +7,27 @@ entities:
   pose: {x: 0, y: -1, zw: 0}
 - name: test3
   type: misc/annotation
-  pose: {x: 2, y: 2, zw: 0}
+  pose: {x: 2, y: 2, zw: 1}
+
+- name: test4
+  type: misc/annotation
+  pose: {x: -3.8, y: 4, zw: 0.235619}
+- name: test5
+  type: misc/annotation
+  pose: {x: -3.6, y: 4, zw: 0.471239}
+- name: test6
+  type: misc/annotation
+  pose: {x: -3.4, y: 4, zw: 0.706858}
+- name: test7
+  type: misc/annotation
+  pose: {x: -3.2, y: 4, zw: 0.942478}
+- name: test8
+  type: misc/annotation
+  pose: {x: -3.0, y: 4, zw: 1.1781}
+- name: test9
+  type: misc/annotation
+  pose: {x: -2.8, y: 4, zw: 1.41372}
+
+#- name: cam
+#  type: testmodel/cam
+#  pose: {x: 0.769996345043, y: 2.01848816872, zw: 0}

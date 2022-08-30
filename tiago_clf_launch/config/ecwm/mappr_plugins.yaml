@@ -4,12 +4,15 @@ generator_plugins:
   - type: ecwm::SpiritLoader
 
 world_plugins:
+  - type: ecwm::SimpleGeometryViz
   - type: ecwm::AffordanceViz
   - type: ecwm::WorldServices
   - type: ecwm::TransformPublisher
   - type: ecwm::SpiritNavigation
 
 ## Plugin configs
+SimpleGeometry:
+  publish_marker: False
 
 AffordanceViz:
   viz_filter: False
