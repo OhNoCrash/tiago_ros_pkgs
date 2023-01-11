@@ -1,0 +1,4 @@
+entities:
+- name: map_origin
+  type: misc/annotation
+  pose: {x: 0, y: 0, zw: 0}
