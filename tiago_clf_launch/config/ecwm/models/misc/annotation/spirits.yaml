@@ -1,5 +1,5 @@
 spirits:
-  - name: viewpoint
+  - name: forward
     pose: {x: 0, y: 0, z: 0}
     frame_id_suffix: "/forward"
     size: 20
@@ -8,6 +8,13 @@ spirits:
   - name: look_down
     pose: {x: 0, y: 0, z: 0}
     frame_id_suffix: "/ground"
+    size: 20
+    resolution: 0.02
+    circular: True
+  - name: viewpoint
+    cam: 1.4
+    pose: {x: 0, y: 0.0, z: 0}
+    frame_id_suffix: "/viewpoint"
     size: 20
     resolution: 0.02
     circular: True

@@ -7,3 +7,7 @@ storages:
   box: 
       pose: {x: 0, y: 1, z: 0}
       size: {x: 0.1, y: 0.1, z: 0.1}
+- name: viewpoint
+  box: 
+      pose: {x: 0, y: 0.1, z: 1.4}
+      size: {x: 0.1, y: 0.1, z: 0.1}
