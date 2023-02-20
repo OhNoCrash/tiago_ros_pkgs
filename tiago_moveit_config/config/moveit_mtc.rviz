@@ -1,12 +1,11 @@
 Panels:
   - Class: rviz/Displays
-    Help Height: 84
+    Help Height: 87
     Name: Displays
     Property Tree Widget:
-      Expanded:
-        - /Motion Planning Tasks1
+      Expanded: ~
       Splitter Ratio: 0.7425600290298462
-    Tree Height: 182
+    Tree Height: 267
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -17,24 +16,26 @@ Panels:
   - Class: moveit_task_constructor/Motion Planning Tasks
     Global Settings:
       Task View Settings:
+        Old task handling: Replace
+        Show Computation Times: true
         Task Expansion: All Expanded
     Name: Motion Planning Tasks
     Tasks View:
       property_splitter:
-        - 326
-        - 657
+        - 716
+        - 239
       solution_sorting:
         column: 0
         order: 1
       solutions_splitter:
-        - 490
-        - 84
+        - 465
+        - 163
       solutions_view_columns: ~
       tasks_view_columns:
-        - 301
-        - 55
-        - 55
-        - 55
+        - 310
+        - 49
+        - 49
+        - 53
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -60,7 +61,7 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Acceleration_Scaling_Factor: 1
+    - Acceleration_Scaling_Factor: 0.8
       Class: moveit_rviz_plugin/MotionPlanning
       Enabled: true
       Move Group Namespace: ""
@@ -68,13 +69,10 @@ Visualization Manager:
       MoveIt_Allow_External_Program: false
       MoveIt_Allow_Replanning: false
       MoveIt_Allow_Sensor_Positioning: false
-      MoveIt_Goal_Tolerance: 0
       MoveIt_Planning_Attempts: 10
       MoveIt_Planning_Time: 5
       MoveIt_Use_Cartesian_Path: false
       MoveIt_Use_Constraint_Aware_IK: true
-      MoveIt_Warehouse_Host: 127.0.0.1
-      MoveIt_Warehouse_Port: 33829
       MoveIt_Workspace:
         Center:
           X: 0
@@ -270,7 +268,15 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          cupro_grasping_base_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           cupro_grasping_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cupro_grasping_tip_frame:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -315,6 +321,11 @@ Visualization Manager:
             Show Trail: false
             Value: true
           head_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          head_3_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -399,6 +410,7 @@ Visualization Manager:
         State Display Time: 0.05 s
         Trail Step Size: 1
         Trajectory Topic: /move_group/display_planned_path
+        Use Sim Time: false
       Planning Metrics:
         Payload: 1
         Show Joint Torques: false
@@ -611,7 +623,15 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          cupro_grasping_base_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           cupro_grasping_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cupro_grasping_tip_frame:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -656,6 +676,11 @@ Visualization Manager:
             Show Trail: false
             Value: true
           head_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          head_3_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -735,14 +760,15 @@ Visualization Manager:
         Show Robot Collision: false
         Show Robot Visual: true
       Value: true
-      Velocity_Scaling_Factor: 1
+      Velocity_Scaling_Factor: 0.8
     - Class: moveit_task_constructor/Motion Planning Tasks
-      Enabled: true
+      Enabled: false
       Interrupt Display: false
       Loop Animation: false
       Markers:
         All at once?: false
         Value: true
+        approach: true
       Name: Motion Planning Tasks
       Robot:
         Fixed Robot Color: 150; 50; 150
@@ -928,7 +954,15 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          cupro_grasping_base_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           cupro_grasping_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cupro_grasping_tip_frame:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -973,6 +1007,11 @@ Visualization Manager:
             Show Trail: false
             Value: true
           head_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          head_3_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -1065,9 +1104,9 @@ Visualization Manager:
       State Display Time: 0.05 s
       Task Solution Topic: /tiago_mtc_test/task/solution
       Tasks:
-        task: 1
+        task pipeline: 1
       Trail Step Size: 1
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -1084,45 +1123,47 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 5.055992603302002
+      Distance: 3.3077523708343506
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
+      Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.8438254594802856
-        Y: 0.5139071941375732
-        Z: 7.003551445450285e-7
+        X: 0.11356700211763382
+        Y: 0.10592000186443329
+        Z: 2.2351800055275817e-07
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4397971034049988
+      Pitch: 0.3897970914840698
       Target Frame: base_footprint
-      Value: XYOrbit (rviz)
-      Yaw: 1.5767642259597778
+      Yaw: 5.679950714111328
     Saved: ~
 Window Geometry:
-  "&Displays":
+  Displays:
     collapsed: false
-  "&MotionPlanning":
-    collapsed: false
-  Height: 1169
+  Height: 1135
   Help:
     collapsed: false
   Hide Left Dock: false
   Hide Right Dock: false
-  Motion Planning &Tasks:
+  Motion Planning Stages:
+    collapsed: false
+  Motion Planning Tasks:
     collapsed: false
   Motion Planning Tasks - Slider:
     collapsed: false
+  MotionPlanning:
+    collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000200000000000002ae0000041efc0200000008fb000000100044006900730070006c00610079007301000000480000015b000000fb01000003fb0000000800480065006c00700000000342000000bb0000008201000003fb0000000a0056006900650077007300000003b0000000b0000000d801000003fb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000005401000003fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000001a4000002c2000001ff01000003fb000000120020002d00200053006c00690064006500720000000000ffffffff000000540100000300000001000002430000041efc0200000001fb0000002a004d006f00740069006f006e00200050006c0061006e006e0069006e00670020005400610073006b007301000000480000041e0000011d010000030000028d0000041e00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000002000000000000025500000404fc0200000009fb000000100044006900730070006c0061007900730100000044000001af000000fd01000003fb0000000800480065006c00700000000342000000bb0000008501000003fb0000000a0056006900650077007300000003b0000000b0000000d301000003fb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000002200000022fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000001f400000254000001ac01000003fb000000120020002d00200053006c00690064006500720000000000ffffffff0000005001000003fb0000002c004d006f00740069006f006e00200050006c0061006e006e0069006e00670020005300740061006700650073000000038f000000b90000007901000003000000010000027900000404fc0200000001fb0000002a004d006f00740069006f006e00200050006c0061006e006e0069006e00670020005400610073006b00730100000044000004040000011d01000003000002b00000040400000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
   Width: 1920
   X: 0
-  Y: 0
+  Y: 276
