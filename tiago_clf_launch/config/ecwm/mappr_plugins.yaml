@@ -9,6 +9,7 @@ world_plugins:
   - type: ecwm::WorldServices
   - type: ecwm::TransformPublisher
   - type: ecwm::SpiritNavigation
+  - type: ecwm::LocationViz
 
 ## Plugin configs
 SimpleGeometry:
