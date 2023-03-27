@@ -23,6 +23,7 @@ global_costmap:
 
   static_layer:
     enabled  : true
+    unknown_cost_value: 80 # default 0
     subscribe_to_updates: true
     map_topic: map
 
