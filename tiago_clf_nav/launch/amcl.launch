@@ -2,7 +2,7 @@
 <launch>
 
     <arg name="sim" default="false"/>
-    <arg name="config" default="amcl2.yaml"/>
+    <arg name="config" default="amcl_tuned.yaml"/>
 
     <group if="$(arg sim)">
         <!-- Set initial pose to origin if sim is used -->  
