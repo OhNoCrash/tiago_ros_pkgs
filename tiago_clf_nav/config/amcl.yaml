@@ -13,13 +13,6 @@ odom_alpha4    : 0.2 # Specifies the expected noise in odometry's translation es
 #odom_alpha3    : 0.8
 #odom_alpha4    : 0.2
 
-# Biron
-#odom_model_type: diff
-#odom_alpha1: 0.2
-#odom_alpha2: 0.2
-#odom_alpha3: 0.8
-#odom_alpha4: 0.2
-
 # Particle filter:
 min_particles    : 350
 max_particles    : 2500

@@ -2,6 +2,7 @@
 <launch>
 
     <arg name="sim" default="false"/>
+    <arg name="config" default="amcl2.yaml"/>
 
     <group if="$(arg sim)">
         <!-- Set initial pose to origin if sim is used -->  
@@ -20,6 +21,6 @@
     <node pkg="amcl" type="amcl" name="amcl" output="screen">
         <remap from="scan" to="scan_clf"/>
 
-        <rosparam file="$(find tiago_clf_nav)/config/amcl2.yaml" command="load"/>
+        <rosparam file="$(find tiago_clf_nav)/config/$(arg config)" command="load"/>
     </node>
 </launch>
