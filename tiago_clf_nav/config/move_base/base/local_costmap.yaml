@@ -78,6 +78,8 @@ local_costmap:
       inf_is_valid: false          #default false, for laser scans
       clear_after_reading: true    #default false, clear the buffer after the layer gets readings from it
       voxel_filter: true           #default off, apply voxel filter to sensor, recommend on 
+      vertical_fov_angle: 0.7      #default 0.7, radians
+      horizontal_fov_angle: 0.9   #default 1.04, radians
     rgbd1_clear:
       data_type: PointCloud2
       topic: /xtion/filtered/points
