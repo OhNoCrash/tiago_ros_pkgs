@@ -1,6 +1,6 @@
 image: clf-robocup.pgm
 resolution: 0.025000
-origin: [-8.141384, -13.588793, 0.000000]
+origin: [-7.189798, -11.500729, 0.000000]
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.196
