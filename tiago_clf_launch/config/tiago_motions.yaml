@@ -428,3 +428,17 @@ play_motion:
         name: grasping_high
         usage: demo
         description: 'grasphigh'
+
+    transport_home:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, 'torso_lift_joint']
+      meta: {description: transport_home, name: transport_home, usage: demo}
+      points:
+      - positions: [0.13, -1.37, -0.26, 2.03, -1.54, 1.29, -2.07, 0.15]
+        time_from_start: 2.0
+
+    transport_over_head:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, 'torso_lift_joint']
+      meta: {description: transport_over_head, name: transport_over_head, usage: demo}
+      points:
+      - positions: [0.09, 1.02, -3.01, 0.74, -1.54, 1.29, -0.20, 0.15]
+        time_from_start: 2.0

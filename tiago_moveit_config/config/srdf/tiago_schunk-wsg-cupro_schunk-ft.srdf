@@ -120,6 +120,26 @@
         <joint name="arm_7_joint" value="2.03" />
         <joint name="torso_lift_joint" value="0.23" />
     </group_state>
+    <group_state name="transport_home" group="arm_torso">
+        <joint name="arm_1_joint" value="0.13" />
+        <joint name="arm_2_joint" value="-1.37" />
+        <joint name="arm_3_joint" value="-0.26" />
+        <joint name="arm_4_joint" value="2.03" />
+        <joint name="arm_5_joint" value="-1.54" />
+        <joint name="arm_6_joint" value="1.29" />
+        <joint name="arm_7_joint" value="-2.07" />
+        <joint name="torso_lift_joint" value="0.15" />
+    </group_state>
+    <group_state name="transport_over_head" group="arm_torso">
+        <joint name="arm_1_joint" value="0.09" />
+        <joint name="arm_2_joint" value="1.02" />
+        <joint name="arm_3_joint" value="-3.01" />
+        <joint name="arm_4_joint" value="0.74" />
+        <joint name="arm_5_joint" value="-1.54" />
+        <joint name="arm_6_joint" value="1.29" />
+        <joint name="arm_7_joint" value="-0.20" />
+        <joint name="torso_lift_joint" value="0.15" />
+    </group_state>
     <group_state name="joint_middle" group="arm_torso">
         <joint name="arm_1_joint" value="1.375" />
         <joint name="arm_2_joint" value="-0.24" />
