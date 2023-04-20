@@ -23,7 +23,8 @@ global_costmap:
 
   static_layer:
     enabled  : true
-    unknown_cost_value: 80 # default 0
+    unknown_cost_value: -1 # default -1
+    track_unknown_space: false
     subscribe_to_updates: true
     map_topic: map
 
@@ -47,11 +48,13 @@ global_costmap:
     map_save_duration:     60     #default 60s, how often to autosave
     observation_sources:   rgbd1_clear rgbd1_mark
     rgbd1_mark:
+      vertical_fov_angle: 0.9      #default 0.7, radians
+      horizontal_fov_angle: 1.2   #default 1.04, radians
       data_type: PointCloud2
       topic: /xtion/filtered/points
       marking: true
       clearing: false
-      min_obstacle_height: 0.2     #default 0, meters
+      min_obstacle_height: 0.05     #default 0, meters
       max_obstacle_height: 2.0     #defaule 3, meters
       expected_update_rate: 0.0    #default 0, if not updating at this rate at least, remove from buffer
       observation_persistence: 0.0 #default 0, use all measurements taken during now-value, 0=latest 
