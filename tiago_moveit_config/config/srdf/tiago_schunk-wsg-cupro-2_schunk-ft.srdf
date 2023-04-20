@@ -58,6 +58,9 @@
     <group_state name="closed" group="gripper">
         <joint name="gripper_finger_joint" value="0.001" />
     </group_state>
+    <group_state name="closed_nearly" group="gripper">
+        <joint name="gripper_finger_joint" value="0.005" />
+    </group_state>
     <group_state name="closed2" group="gripper">
         <joint name="gripper_finger_joint" value="0.01" />
     </group_state>
