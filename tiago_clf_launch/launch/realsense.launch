@@ -2,7 +2,7 @@
 <launch>
 
 
-<node pkg="tf2_ros" type="static_transform_publisher" name="camera_link" args="0.076 0.176 0.021 -0.707 0.006 -0.006 0.707 head_2_link camera_link" />
+<node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="0 0 0 0 0 0 1 realsense_link camera_link" />
 
 
 <include file="$(find realsense2_camera)/launch/rs_camera.launch">
