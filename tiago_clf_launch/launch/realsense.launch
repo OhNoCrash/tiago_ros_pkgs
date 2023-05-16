@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
+<arg name="publish_transform" default="True"></arg>
 
-<node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="0 0 0 0 0 0 1 realsense_link camera_link" />
-
+<group if="$(arg publish_transform)">
+  <node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="0 0 0 0 0 0 1 realsense_link camera_link" />
+</group>
 
 <include file="$(find realsense2_camera)/launch/rs_camera.launch">
 	<!-- <arg name="rgb" value="color" /> -->
