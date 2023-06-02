@@ -44,7 +44,7 @@ scan_filter_chain:
 #   params:
 #     lower_angle: 1.30
 #     upper_angle: 1.50
-#- name: footprint_filter
+#- name: laser_filters/footprint_filter
 #  type: LaserScanFootprintFilter
 #  params:
 #    inscribed_radius: 0.24
