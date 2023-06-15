@@ -1,17 +1,17 @@
 # Odometry model:
 odom_model_type: diff-corrected
-odom_alpha1    : 0.2
-odom_alpha2    : 0.02
-odom_alpha3    : 0.8
-odom_alpha4    : 0.02
+odom_alpha1    : 0.3
+odom_alpha2    : 1.2
+odom_alpha3    : 0.6
+odom_alpha4    : 1.0
 
 # Particle filter:
-min_particles    : 250
-max_particles    : 2000
+min_particles    : 100
+max_particles    : 1500
 kld_err          : 0.05
 kld_z            : 0.99
-update_min_d     : 0.2
-update_min_a     : 0.174532925199
+update_min_d     : 0.0
+update_min_a     : 0.0
 resample_interval: 1
 converge_dist_threshold: 0.5
 
@@ -23,13 +23,12 @@ converge_dist_threshold: 0.5
 laser_model_type         : likelihood_field
 laser_max_range          : -1.0 #use reported max range (default)
 laser_min_range          : -1.0 #use reported min range (default)
-laser_max_beams          : 120
+laser_max_beams          : 250
 laser_z_hit              : 0.9
 laser_z_short            : 0.05
 laser_z_max              : 0.05
 laser_z_rand             : 0.1
 laser_sigma_hit          : 0.2
-laser_lambda_short       : 0.1
 laser_lambda_short       : 0.1
 laser_likelihood_max_dist: 2.0
 # Params specific for likelihood_field_prob (wrt likelihood_field):
@@ -43,8 +42,8 @@ transform_tolerance: 0.27 # This value is to assure that amcl is newest than odo
 gui_publish_rate   : 10.0
 
 # Recovery:
-recovery_alpha_slow: 0.0
-recovery_alpha_fast: 0.0
+recovery_alpha_slow: 0.0001
+recovery_alpha_fast: 0.05
 
 # Frames:
 base_frame_id: base_footprint
