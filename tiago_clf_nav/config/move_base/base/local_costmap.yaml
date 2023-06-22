@@ -15,7 +15,7 @@ local_costmap:
     - name: obstacle_layer
       type: 'costmap_2d::CurrentObstacleLayer'
     - name: obstacle_sonar_layer
-      type: 'range_sensor_layer::RangeSensorLayer'
+      type: 'costmap_2d::CurrentObstacleLayer'
     - name: rgbd_obstacle_layer
       type: 'spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer'
       #    - name: footprint_layer
@@ -39,13 +39,12 @@ local_costmap:
       obstacle_range: 8.0
 
   obstacle_sonar_layer:
-    enabled: false
-    ns: ""
-    topics: ["/sonar_base"]
-    no_readings_timeout: 0.0
-    clear_threshold: 0.20
-    mark_threshold: 0.80
-    clear_on_max_reading: true
+    enabled: true
+    observation_sources: sonar_cloud 
+    sonar_cloud: 
+      sensor_frame: base_link
+      data_type: PointCloud2
+      topic: /sensor_pointcloud_node/pointcloud
 
   rgbd_obstacle_layer:
     enabled:               true
