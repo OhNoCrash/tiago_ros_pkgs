@@ -24,6 +24,10 @@
         <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg config)/global_planner.yaml" command="load" />
 
     </node>
+        
+    <node name="sensor_pointcloud_node" pkg="sensor_pointcloud" type="sensor_pointcloud_node">
+        <rosparam command="load" file="$(find sensor_pointcloud)/sensorConfig.yaml" />
+    </node>
     
     <!-- Start laser filters -->
     <group if="$(arg sim)"> <!-- started on robot with pal_startup/clf_laser_filters -->

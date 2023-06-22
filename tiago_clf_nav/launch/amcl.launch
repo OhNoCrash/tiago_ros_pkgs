@@ -16,10 +16,6 @@
         <param name="initial_pose_y" value="0"/>
         <param name="initial_pose_a" value="0"/>
         <!-- <rosparam file="$(env HOME)/.pal/pose.yaml" command="load"/> -->
-        
-        <node name="sensor_pointcloud_node" pkg="sensor_pointcloud" type="sensor_pointcloud_node">
-            <rosparam command="load" file="$(find sensor_pointcloud)/sensorConfig.yaml" />
-        </node>
     </group>
 
     <node pkg="amcl" type="amcl" name="amcl" output="screen">
