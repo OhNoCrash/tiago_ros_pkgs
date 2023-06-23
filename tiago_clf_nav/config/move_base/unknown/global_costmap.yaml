@@ -1,0 +1,112 @@
+# Independent settings for the planner's costmap
+global_costmap:
+
+  update_frequency : 2.5
+  publish_frequency: 2.5
+
+  #track_unknown_space: true
+  #unknown_cost_value : 255
+
+  resolution    : 0.1
+
+  plugins:
+    - name: static_layer
+      type: 'costmap_2d::StaticLayer'
+    - name: obstacle_layer
+      type: 'costmap_2d::CurrentObstacleLayer'
+    # - name: rgbd_obstacle_layer
+    #   type: 'spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer'
+      #    - name: footprint_layer
+      #      type: 'costmap_2d::FootprintLayer'
+    - name: inflation_layer
+      type: 'costmap_2d::InflationLayer'
+
+  static_layer:
+    enabled  : false
+    unknown_cost_value: -1 # default -1
+    track_unknown_space: false
+    subscribe_to_updates: true
+    map_topic: map
+
+  rgbd_obstacle_layer:
+    enabled:               true
+    voxel_decay:           8    #seconds if linear, e^n if exponential
+    decay_model:           1      #0=linear, 1=exponential, -1=persistent
+    voxel_size:            0.02   #meters
+    track_unknown_space:   true   #default space is unknown
+    observation_persistence: 0.0  #seconds
+    max_obstacle_height:   1.5    #meters
+    unknown_threshold:     15     #voxel height
+    mark_threshold:        0      #voxel height
+    update_footprint_enabled: true
+    combination_method:    1      #1=max, 0=override
+    obstacle_range:        3.0    #meters
+    origin_z:              0.0    #meters
+    publish_voxel_map:     true   # default off
+    transform_tolerance:   0.2    # seconds
+    mapping_mode:          false  # default off, saves map not for navigation
+    map_save_duration:     60     #default 60s, how often to autosave
+    observation_sources:   rgbd1_clear rgbd1_mark
+    rgbd1_mark:
+      vertical_fov_angle: 0.9      #default 0.7, radians
+      horizontal_fov_angle: 1.2   #default 1.04, radians
+      data_type: PointCloud2
+      topic: /xtion/filtered/points
+      marking: true
+      clearing: false
+      min_obstacle_height: 0.05     #default 0, meters
+      max_obstacle_height: 2.0     #defaule 3, meters
+      expected_update_rate: 0.0    #default 0, if not updating at this rate at least, remove from buffer
+      observation_persistence: 0.0 #default 0, use all measurements taken during now-value, 0=latest 
+      inf_is_valid: false          #default false, for laser scans
+      clear_after_reading: true    #default false, clear the buffer after the layer gets readings from it
+      voxel_filter: true           #default off, apply voxel filter to sensor, recommend on 
+    rgbd1_clear:
+      data_type: PointCloud2
+      topic: /xtion/filtered/points
+      marking: false
+      clearing: true
+      min_z: 0.1                   #default 0, meters
+      max_z: 7.0                   #default 10, meters
+      vertical_fov_angle: 1.2      #default 0.7, radians
+      horizontal_fov_angle: 1.6   #default 1.04, radians
+      decay_acceleration: 8.      #default 0, 1/s^2. If laser scanner MUST be 0
+      model_type: 0                #default 0 (depth camera). Use 1 for 3D Lidar
+
+  obstacle_layer:
+    enabled: true
+    observation_sources: sensor_scan_clf
+    track_unknown_space: true
+    #combination_method: 0 # can erase static layer
+
+    sensor_scan_clf:
+      sensor_frame: base_laser_link
+      data_type: LaserScan
+      topic: /scan_clf
+      expected_update_rate: 2.0
+      observation_persistence: 0
+      #inf_is_valid: true
+      marking: true
+      clearing: true
+      raytrace_range: 10.0
+      obstacle_range: 6.0
+
+  #footprint_layer:
+  #  enabled: true
+
+  inflation_layer:
+    enabled            : true
+    inflation_radius   : 0.7
+    cost_scaling_factor: 6
+
+### Biron
+# commons
+#max_obstacle_range: 3.0
+#raytrace_range: 5.5
+
+#inflation_radius: 0.90
+#update_frequency: 5.0      # default 5.0
+#publish_frequency: 5.0      # default 0.0
+#cost_scaling_factor: 3.0    # default 10.0
+  
+
