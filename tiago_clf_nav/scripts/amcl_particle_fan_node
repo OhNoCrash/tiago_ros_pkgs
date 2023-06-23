@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+
+# ROS
+import rospy
+
+from std_srvs.srv import Empty
+import dynamic_reconfigure.client
+
+
+class AmclParticleFan():
+    def __init__(self):
+        self.srv = rospy.Service('~locate', Empty, self._locate_srv_callback)
+
+    def _locate_srv_callback(self, req):
+        rospy.loginfo(logger_name="AmclParticleFan", msg=f"triggered locate")
+
+        # todo, get current configuration
+
+        # todo, get current_pose
+
+        # update min distances to 0
+        client = dynamic_reconfigure.client.Client("amcl", timeout=30)
+        client.update_configuration({"update_min_d" : 0.0, "update_min_a" : 0.0})
+        d = rospy.Duration(0.1)
+        d.sleep()
+
+        # todo, send pose estimate == current_pose
+
+        # wait a bit to update pose, maybe listen to particles/pose_covar and decide instead
+        d = rospy.Duration(2.0)
+        d.sleep()
+
+        # reset configuration, todo use old configuration instead
+        client.update_configuration({"update_min_d" : 0.001, "update_min_a" : 0.001})
+        d = rospy.Duration(0.1)
+        d.sleep()
+
+        return {}
+
+
+if __name__ == '__main__':
+
+    # Start ROS node
+    rospy.init_node('amcl_patricle_fan')
+    
+
+    node = AmclParticleFan()
+
+    rospy.loginfo(logger_name="AmclParticleFanning", msg="AmclParticleFan running")
+
+    rospy.spin()
