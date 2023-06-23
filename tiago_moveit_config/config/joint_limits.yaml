@@ -56,6 +56,6 @@ joint_limits:
   # schunk-wsg
   gripper_finger_joint:
     has_velocity_limits: true
-    max_velocity: 0.05
+    max_velocity: 0.03
     has_acceleration_limits: false
     max_acceleration: 0
