@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import os
 import sys
@@ -24,19 +24,16 @@ class AmclParticleFan():
         # update min distances to 0
         client = dynamic_reconfigure.client.Client("amcl", timeout=30)
         client.update_configuration({"update_min_d" : 0.0, "update_min_a" : 0.0})
-        d = rospy.Duration(0.1)
-        d.sleep()
+        rospy.sleep(0.2)
 
         # todo, send pose estimate == current_pose
 
         # wait a bit to update pose, maybe listen to particles/pose_covar and decide instead
-        d = rospy.Duration(2.0)
-        d.sleep()
+        rospy.sleep(3)
 
         # reset configuration, todo use old configuration instead
         client.update_configuration({"update_min_d" : 0.001, "update_min_a" : 0.001})
-        d = rospy.Duration(0.1)
-        d.sleep()
+        rospy.sleep(0.2)
 
         return {}
 
