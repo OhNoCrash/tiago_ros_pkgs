@@ -15,7 +15,7 @@ class AmclParticleFan():
         self.srv = rospy.Service('~locate', Empty, self._locate_srv_callback)
 
     def _locate_srv_callback(self, req):
-        rospy.loginfo(logger_name="AmclParticleFan", msg=f"triggered locate")
+        rospy.loginfo(logger_name="AmclParticleFan", msg="triggered locate")
 
         # todo, get current configuration
 
