@@ -18,6 +18,16 @@ local_costmap:
       type: 'costmap_2d::CurrentObstacleLayer'
     - name: inflation_layer
       type: 'costmap_2d::InflationLayer'
+    - name: obstacle_sonar_layer
+      type: 'costmap_2d::CurrentObstacleLayer'
+
+  obstacle_sonar_layer:
+    enabled: true
+    observation_sources: sonar_cloud 
+    sonar_cloud: 
+      sensor_frame: base_link
+      data_type: PointCloud2
+      topic: /sensor_pointcloud_node/pointcloud
 
   rgbd_obstacle_layer:
     enabled:               true
