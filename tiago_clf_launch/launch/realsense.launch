@@ -4,7 +4,7 @@
 <arg name="publish_transform" default="True"></arg>
 
 <group if="$(arg publish_transform)">
-  <node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="-0.002 0.0 0.006 -0.0087252 0.017452 0.001523 0.99981 realsense_link camera_link" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="-0.002 0.11396 0.0058 -0.0087252 0.017452 0.001523 0.99981 realsense_link camera_link" />
   <!--node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="1.8626e-9 0.027831 0 -6.0263e-17 0.015707 -6.0263e-17 0.99988 realsense_link camera_link" /-->
   <!--node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="-0.00951475 -0.00500572 0.00447848 4.36893e-10 0.00968784 7.24114e-11 0.999953 realsense_link camera_link" /-->
 </group>
