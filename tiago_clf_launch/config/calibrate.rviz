@@ -435,9 +435,9 @@ Visualization Manager:
         e2: 2
         e3: 0
       translation:
-        X: -0.0020000000949949026
-        Y: 0
-        Z: 0.006000000052154064
+        X: -0.002
+        Y: 0.008
+        Z: 0.0058
     - Class: rviz/InteractiveMarkers
       Enable Transparency: true
       Enabled: true
@@ -451,7 +451,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
