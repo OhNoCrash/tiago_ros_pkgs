@@ -92,11 +92,6 @@ local_costmap:
       raytrace_range: 4.0
       obstacle_range: 3.0
 
-  obstacle_sonar_layer:
-    enabled: true
-    observation_sources: sonar_max_range_cloud sonar_cloud
-    #combination_method: 1
-
     sonar_cloud:
       sensor_frame: base_link
       data_type: PointCloud2

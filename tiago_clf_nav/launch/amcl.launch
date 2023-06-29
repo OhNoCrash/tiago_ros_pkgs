@@ -24,7 +24,7 @@
         <rosparam file="$(find tiago_clf_nav)/config/$(arg config)" command="load"/>
     </node>
 
-    <node pkg="tiago_clf_launch" type="amcl_particle_fan_node" name="amcl_particle_fanning" output="screen">
+    <node pkg="tiago_clf_nav" type="amcl_particle_fan_node" name="amcl_particle_fanning">
         
     </node>
 </launch>
