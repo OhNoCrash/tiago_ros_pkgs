@@ -13,14 +13,14 @@ global_costmap:
     - name: static_layer
       type: 'costmap_2d::StaticLayer'
     - name: obstacle_layer
-      type: 'costmap_2d::ObstacleLayer'
+      type: 'costmap_2d::CurrentObstacleLayer'
     - name: inflation_layer
       type: 'costmap_2d::InflationLayer'
 
   static_layer:
     enabled  : true
     subscribe_to_updates: true
-    map_topic: map
+    map_topic: /map
 
   obstacle_layer:
     enabled: true
@@ -32,10 +32,6 @@ global_costmap:
       data_type: LaserScan
       topic: /scan_clf
       expected_update_rate: 2.0
-      #observation_persistence: 1.0
-      #inf_is_valid: true
-      marking: true
-      clearing: true
       raytrace_range: 15.0
       obstacle_range: 8.0
 
