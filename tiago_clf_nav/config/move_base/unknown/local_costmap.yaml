@@ -16,10 +16,10 @@ local_costmap:
       type: 'spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer'
     - name: obstacle_layer
       type: 'costmap_2d::CurrentObstacleLayer'
-    - name: inflation_layer
-      type: 'costmap_2d::InflationLayer'
     - name: obstacle_sonar_layer
       type: 'costmap_2d::CurrentObstacleLayer'
+    - name: inflation_layer
+      type: 'costmap_2d::InflationLayer'
 
   obstacle_sonar_layer:
     enabled: true

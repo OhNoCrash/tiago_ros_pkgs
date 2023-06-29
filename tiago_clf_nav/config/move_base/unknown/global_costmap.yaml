@@ -14,6 +14,8 @@ global_costmap:
       type: 'costmap_2d::StaticLayer'
     - name: obstacle_layer
       type: 'costmap_2d::CurrentObstacleLayer'
+    - name: obstacle_rgbd_layer
+      type: 'costmap_2d::CurrentObstacleLayer'
     # - name: rgbd_obstacle_layer
     #   type: 'spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer'
       #    - name: footprint_layer
@@ -27,6 +29,14 @@ global_costmap:
     track_unknown_space: false
     subscribe_to_updates: true
     map_topic: map
+
+  obstacle_rgbd_layer:
+    enabled: true
+    observation_sources: rgbd_cloud 
+    rgbd_cloud: 
+      sensor_frame: xtion_depth_optical_frame
+      data_type: PointCloud2
+      topic: /xtion/filtered/points
 
   rgbd_obstacle_layer:
     enabled:               true
