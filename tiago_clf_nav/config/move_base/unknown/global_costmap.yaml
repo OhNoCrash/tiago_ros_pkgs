@@ -37,6 +37,7 @@ global_costmap:
       sensor_frame: xtion_depth_optical_frame
       data_type: PointCloud2
       topic: /xtion/filtered/points
+      min_z: 0.2                   #default 0, meters
 
   rgbd_obstacle_layer:
     enabled:               true
