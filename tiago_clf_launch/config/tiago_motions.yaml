@@ -374,6 +374,20 @@ play_motion:
       - positions: [0.19998590559757012, -1.339984962186872, -0.19954286766172208, 1.940211394560432, -1.5704734929417996, 0.10990430796763995, -1.390177870304425]
         time_from_start: 1.0
 
+    pointing_forward_small_gesture:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_finger_joint]
+      meta: {description: pointing_forward_small_gesture, name: pointing_forward_small_gesture, usage: demo}
+      points:
+      - positions: [0.19998590559757012, -1.339984962186872, -0.19954286766172208, 1.940211394560432, 0.37, 1.39, -1.390177870304425]
+        time_from_start: 1.0
+
+    pointing_forward_big_gesture:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_finger_joint]
+      meta: {description: pointing_forward_big_gesture, name: pointing_forward_big_gesture, usage: demo}
+      points:
+      - positions: [0.25, -1.5, -1.68, 2.29, -1.90, -0.43, 0.0, 0.0]
+        time_from_start: 2.0
+
     pointing_home:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
       meta: {description: pointing_home, name: pointing_home, usage: demo}
