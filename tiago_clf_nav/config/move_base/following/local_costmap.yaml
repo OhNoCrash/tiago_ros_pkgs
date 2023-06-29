@@ -16,6 +16,8 @@ local_costmap:
       type: 'spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer'
     - name: obstacle_layer
       type: 'costmap_2d::CurrentObstacleLayer'
+    - name: obstacle_sonar_layer
+      type: 'costmap_2d::CurrentObstacleLayer'
     - name: inflation_layer
       type: 'costmap_2d::InflationLayer'
 
@@ -62,6 +64,14 @@ local_costmap:
       decay_acceleration: 16       #default 0, 1/s^2. If laser scanner MUST be 0
       model_type: 0                #default 0 (depth camera). Use 1 for 3D Lidar
 
+  obstacle_sonar_layer:
+    enabled: true
+    observation_sources: sonar_cloud 
+    sonar_cloud: 
+      sensor_frame: base_link
+      data_type: PointCloud2
+      topic: /sensor_pointcloud_node/pointcloud
+
   obstacle_layer:
     enabled: true
     observation_sources: sensor_scan_clf #point_cloud_sensor1 point_cloud_sensor0
@@ -81,11 +91,6 @@ local_costmap:
       clearing: true
       raytrace_range: 4.0
       obstacle_range: 3.0
-
-  obstacle_sonar_layer:
-    enabled: true
-    observation_sources: sonar_max_range_cloud sonar_cloud
-    #combination_method: 1
 
     sonar_cloud:
       sensor_frame: base_link
