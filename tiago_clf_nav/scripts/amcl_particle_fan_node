@@ -5,21 +5,29 @@ import sys
 
 # ROS
 import rospy
+from rospy import ROSException
 
 from std_srvs.srv import Empty
+from geometry_msgs.msg import PoseWithCovarianceStamped
 import dynamic_reconfigure.client
 
 
 class AmclParticleFan():
     def __init__(self):
         self.srv = rospy.Service('~locate', Empty, self._locate_srv_callback)
+        self.srv = rospy.Service('~locate_long', Empty, self._locate_long_srv_callback)
+        self.pub_initial = rospy.Publisher('/initialpose', PoseWithCovarianceStamped)
+
 
     def _locate_srv_callback(self, req):
         rospy.loginfo(logger_name="AmclParticleFan", msg="triggered locate")
 
         # todo, get current configuration
 
-        # todo, get current_pose
+        try:
+            current_pose = rospy.wait_for_message("/amcl_pose", PoseWithCovarianceStamped, 2.0)
+        except:
+            current_pose = None
 
         # update min distances to 0
         client = dynamic_reconfigure.client.Client("amcl", timeout=30)
@@ -27,9 +35,45 @@ class AmclParticleFan():
         rospy.sleep(0.2)
 
         # todo, send pose estimate == current_pose
+        if current_pose != None:
+            current_pose.pose.covariance[0] = current_pose.pose.covariance[0] + 0.05
+            current_pose.pose.covariance[7] = current_pose.pose.covariance[7] + 0.05
+            current_pose.pose.covariance[35] = current_pose.pose.covariance[35] + 0.1
+            self.pub_initial(current_pose)
 
         # wait a bit to update pose, maybe listen to particles/pose_covar and decide instead
         rospy.sleep(3)
+
+        # reset configuration, todo use old configuration instead
+        client.update_configuration({"update_min_d" : 0.001, "update_min_a" : 0.001})
+        rospy.sleep(0.2)
+
+        return {}
+    
+    def _locate_long_srv_callback(self, req):
+        rospy.loginfo(logger_name="AmclParticleFan", msg="triggered locate")
+
+        # todo, get current configuration
+
+        try:
+            current_pose = rospy.wait_for_message("/amcl_pose", PoseWithCovarianceStamped, 2.0)
+        except:
+            current_pose = None
+
+        # update min distances to 0
+        client = dynamic_reconfigure.client.Client("amcl", timeout=30)
+        client.update_configuration({"update_min_d" : 0.0, "update_min_a" : 0.0})
+        rospy.sleep(0.2)
+
+        # todo, send pose estimate == current_pose
+        if current_pose != None:
+            current_pose.pose.covariance[0] = current_pose.pose.covariance[0] + 0.15
+            current_pose.pose.covariance[7] = current_pose.pose.covariance[7] + 0.15
+            current_pose.pose.covariance[35] = current_pose.pose.covariance[35] + 0.3
+            self.pub_initial(current_pose)
+
+        # wait a bit to update pose, maybe listen to particles/pose_covar and decide instead
+        rospy.sleep(6)
 
         # reset configuration, todo use old configuration instead
         client.update_configuration({"update_min_d" : 0.001, "update_min_a" : 0.001})
@@ -43,7 +87,6 @@ if __name__ == '__main__':
     # Start ROS node
     rospy.init_node('amcl_patricle_fan')
     
-
     node = AmclParticleFan()
 
     rospy.loginfo(logger_name="AmclParticleFanning", msg="AmclParticleFan running")
