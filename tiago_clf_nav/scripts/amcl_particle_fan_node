@@ -36,9 +36,12 @@ class AmclParticleFan():
 
         # todo, send pose estimate == current_pose
         if current_pose != None:
-            current_pose.pose.covariance[0] = current_pose.pose.covariance[0] + 0.05
-            current_pose.pose.covariance[7] = current_pose.pose.covariance[7] + 0.05
-            current_pose.pose.covariance[35] = current_pose.pose.covariance[35] + 0.1
+            # a = PoseWithCovarianceStamped()
+            cov = list(current_pose.pose.covariance)
+            cov[0] = current_pose.pose.covariance[0] + 0.05
+            cov[7] = current_pose.pose.covariance[7] + 0.05
+            cov[35] = current_pose.pose.covariance[35] + 0.1
+            current_pose.pose.covariance = cov
             self.pub_initial(current_pose)
 
         # wait a bit to update pose, maybe listen to particles/pose_covar and decide instead
