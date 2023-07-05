@@ -25,7 +25,8 @@ global_costmap:
   current_obstacle_layer:
     enabled: true
     observation_sources: sensor_scan_clf
-    combination_method: 0 # can erase static layer
+    #combination_method: 0 # can erase static layer
+    combination_method: 1
 
     sensor_scan_clf:
       sensor_frame: base_laser_link
