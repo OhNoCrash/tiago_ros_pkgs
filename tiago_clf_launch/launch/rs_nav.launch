@@ -4,11 +4,8 @@
 <arg name="publish_transform" default="True"></arg>
 
 <group if="$(arg publish_transform)">
-  <node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="-0.002 0.008 0.0058 -0.00872521 0.0174517 0.000152299 0.99981 realsense_link rs_nav_link" />
-  <!--node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="1.8626e-9 0.027831 0 -6.0263e-17 0.015707 -6.0263e-17 0.99988 realsense_link camera_link" /-->
-  <!--node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="-0.00951475 -0.00500572 0.00447848 4.36893e-10 0.00968784 7.24114e-11 0.999953 realsense_link camera_link" /-->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="0.38235 0.001 0.0302 -0.045516 0.38414 0.018759 0.92196 torso_lift_link rs_nav_link" />
 </group>
-
 
 <include file="$(find realsense2_camera)/launch/rs_camera.launch">
 	<!-- <arg name="rgb" value="color" /> -->
@@ -53,24 +50,21 @@
 
  </group>
 
-
-
- 
-
 <rosparam>
    /rs_nav/rgb_camera/power_line_frequency: 1
    /rs_nav/rgb_camera/global_time_enabled: false
 
    /rs_nav/l500_depth_sensor/visual_preset: 5
-   /rs_nav/l500_depth_sensor/laser_power: 80
-   /rs_nav/l500_depth_sensor/confidence_threshold: 1
+   /rs_nav/l500_depth_sensor/laser_power: 50
+   /rs_nav/l500_depth_sensor/confidence_threshold: 3
    /rs_nav/l500_depth_sensor/min_distance: 250
    /rs_nav/l500_depth_sensor/receiver_gain: 12
-   /rs_nav/l500_depth_sensor/post_processing_sharpening: 2
-   /rs_nav/l500_depth_sensor/pre_processing_sharpening: 3
-   /rs_nav/l500_depth_sensor/receiver_gain: 12
-   /rs_nav/l500_depth_sensor/noise_filtering: 5
+   /rs_nav/l500_depth_sensor/post_processing_sharpening: 3
+   /rs_nav/l500_depth_sensor/pre_processing_sharpening: 5
+   /rs_nav/l500_depth_sensor/receiver_gain: 9
+   /rs_nav/l500_depth_sensor/noise_filtering: 6
    /rs_nav/l500_depth_sensor/digital_gain: 2
+   /rs_nav/l500_depth_sensor/frames_queue_size: 4
 
    /rs_nav/l500_depth_sensor/global_time_enabled: true
 
