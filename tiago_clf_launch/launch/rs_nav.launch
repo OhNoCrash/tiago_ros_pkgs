@@ -4,7 +4,7 @@
 <arg name="publish_transform" default="True"></arg>
 
 <group if="$(arg publish_transform)">
-  <node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="0.38235 0.001 0.0302 -0.045516 0.38414 0.018759 0.92196 torso_lift_link rs_nav_link" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="rs_nav_calibration" args="0.38235 0.001 -0.0202 -0.045516 0.38414 0.018759 0.92196 torso_lift_link rs_nav_link" />
 </group>
 
 <include file="$(find realsense2_camera)/launch/rs_camera.launch">
