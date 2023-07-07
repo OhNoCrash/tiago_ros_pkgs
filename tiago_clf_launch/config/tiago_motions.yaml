@@ -436,7 +436,7 @@ play_motion:
     carry_milk:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
       points:
-      - positions: [0.15, 0.11, -1.58, 1.82, 1.74, 0.39, 1.49]
+      - positions: [0.15, 0.11, -1.58, 1.82, -0.33, -0.03, 0.46]
         time_from_start: 2.0
       meta:
         name: carry_milk
