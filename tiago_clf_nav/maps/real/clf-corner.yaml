@@ -1,6 +1,6 @@
-image: clf_cupro.pgm
+image: clf-corner.pgm
 resolution: 0.025000
-origin: [-8.256223, -10.238918, 0.000000]
+origin: [-1.625065, -4.390026, 0.000000]
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.196
