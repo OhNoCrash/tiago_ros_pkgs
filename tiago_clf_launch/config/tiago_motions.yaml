@@ -466,3 +466,11 @@ play_motion:
       points:
       - positions: [0.09, 1.02, -3.01, 0.74, -1.54, 1.29, -0.20, 0.15]
         time_from_start: 2.0
+
+    transport_over_head_no_lift:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
+      meta: {description: transport_over_head_no_lift, name: transport_over_head_no_lift, usage: demo}
+      points:
+      - positions: [0.09, 1.02, -3.01, 0.74, -1.54, 1.29, -0.20]
+        time_from_start: 2.0
+
