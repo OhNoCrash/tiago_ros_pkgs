@@ -1,7 +1,7 @@
 <launch>
 
     <arg name="sim" default="false"/>
-    <arg if="$(arg sim)" name="config" default="sim"/>
+    <arg if="$(arg sim)" name="config" value="sim"/>
     <arg unless="$(arg sim)" name="config" default="base"/>
 
     <!-- Load PlayMotion Navigation Pose -->
