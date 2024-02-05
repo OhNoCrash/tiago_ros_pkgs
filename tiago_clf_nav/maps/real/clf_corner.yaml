@@ -1,4 +1,4 @@
-image: clf-corner.pgm
+image: clf_corner.pgm
 resolution: 0.025000
 origin: [-1.625065, -4.390026, 0.000000]
 negate: 0
