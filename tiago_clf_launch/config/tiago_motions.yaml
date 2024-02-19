@@ -340,6 +340,15 @@ play_motion:
         usage: demo
         description: 'Pick a shirt-like object from floor in front of the robot'
 
+    handover_coffee:
+      joints: ['torso_lift_joint', 'arm_1_joint', 'arm_2_joint', 'arm_3_joint', 'arm_4_joint', 'arm_5_joint', 'arm_6_joint', 'arm_7_joint', 'gripper_finger_joint']
+      points:
+      - positions: [0.15, 1.23, 0.19, -1.74, 1.07,  -1.54, 1.29, -1.23, 0.001]
+        time_from_start: 1.5
+      meta:
+        name: coffee
+        usage: demo
+        description: 'Offer a coffee on above-table height'
 
 
 
