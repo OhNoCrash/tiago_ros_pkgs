@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="robot_localization" type="ukf_localization_node" name="ukf_se" clear_params="true">
+    <rosparam command="load" file="$(find tiago_clf_nav)/config/odom_ekf.yaml" /> 
+    <remap from="cmd_vel" to="/mobile_base_controller/cmd_vel_out"/>
+  </node>
+</launch>

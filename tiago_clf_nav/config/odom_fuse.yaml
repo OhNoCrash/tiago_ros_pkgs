@@ -38,7 +38,6 @@ odometry_sensor:
 imu_sensor:
   topic: '/base_imu'
   twist_target_frame: 'base_footprint'
-  linear_velocity_dimensions: ['x', 'y']
   angular_velocity_dimensions: ['yaw']
 
 publishers:
@@ -51,5 +50,5 @@ filtered_publisher:
   odom_frame_id: 'odom'
   map_frame_id: 'map'
   world_frame_id: 'odom'
-  publish_tf: false
+  publish_tf: true
   publish_frequency: 30
