@@ -1,0 +1,5 @@
+<launch>
+  <node name="state_estimator" pkg="fuse_optimizers" type="fixed_lag_smoother_node">
+    <rosparam command="load" file="$(find tiago_clf_nav)/config/odom_fuse.yaml"/>
+  </node>
+</launch>
