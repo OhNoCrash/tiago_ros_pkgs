@@ -32,7 +32,7 @@ initial_localization_sensor:
 odometry_sensor:
   topic: '/mobile_base_controller/odom'
   twist_target_frame: 'base_footprint'
-  linear_velocity_dimensions: ['x', 'y']
+  linear_velocity_dimensions: ['x']
   angular_velocity_dimensions: ['yaw']
 
 imu_sensor:
