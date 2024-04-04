@@ -483,3 +483,23 @@ play_motion:
       - positions: [0.09, 1.02, -3.01, 0.74, -1.54, 1.29, -0.20]
         time_from_start: 2.0
 
+
+    cml_carry_on_back:
+          joints: [arm_1_joint,
+          arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint,
+          arm_6_joint, arm_7_joint]
+          points:
+          - positions: [1.36, -1.21, -2.91, 2.20, -2.00, 0.93, -0.59]
+            time_from_start: 0.5
+          - positions: [2.21, -1.21, -1.92, 2.20, -2.00, 0.93, -0.59]
+            time_from_start: 2
+          - positions: [2.74, -1.21, -1.92, 2.20, -2.00, 0.93, -0.59]
+            time_from_start: 3
+          - positions: [2.74, -1.21, -1.92, 1.95, -2.00, 0.93, -0.59]
+            time_from_start: 4
+          - positions: [2.74, -1.21, -1.33, 1.95, -2.00, 0.93, -0.59]
+            time_from_start: 5
+          meta:
+            name: cml_carry_on_back
+            usage: carryMyLagguage
+            description: 'Turns gripper on the back of the robot to transport bag without occlusion of important sensors'
