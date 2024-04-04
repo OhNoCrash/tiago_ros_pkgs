@@ -492,13 +492,13 @@ play_motion:
           - positions: [1.36, -1.21, -2.91, 2.20, -2.00, 0.93, -0.59]
             time_from_start: 0.5
           - positions: [2.21, -1.21, -1.92, 2.20, -2.00, 0.93, -0.59]
-            time_from_start: 2
+            time_from_start: 2.0
           - positions: [2.74, -1.21, -1.92, 2.20, -2.00, 0.93, -0.59]
-            time_from_start: 3
+            time_from_start: 3.0
           - positions: [2.74, -1.21, -1.92, 1.95, -2.00, 0.93, -0.59]
-            time_from_start: 4
+            time_from_start: 4.0
           - positions: [2.74, -1.21, -1.33, 1.95, -2.00, 0.93, -0.59]
-            time_from_start: 5
+            time_from_start: 5.0
           meta:
             name: cml_carry_on_back
             usage: carryMyLagguage
