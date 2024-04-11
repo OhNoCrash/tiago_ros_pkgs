@@ -30,7 +30,7 @@
 	<arg name="align_depth" value="true"/>
 	<arg name="enable_sync" value="true"/>
 	<arg name="initial_reset" value="true"/>
-	<arg name="respawn" value="true"/>
+	<arg name="respawn" value="false"/>
    <arg name="publish_odom_tf" value="false"/>
 </include>
 
