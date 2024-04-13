@@ -1,8 +1,8 @@
 # Independent settings for the local costmap
 local_costmap:
 
-  update_frequency : 2.5
-  publish_frequency: 2.5
+  update_frequency : 30
+  publish_frequency: 30
   max_obstacle_height: 2
 
   static_map    : false
@@ -45,13 +45,15 @@ local_costmap:
       topic: /xtion/filtered/points
       marking: true
       clearing: false
-      min_obstacle_height: 0.1     #default 0, meters
+      min_obstacle_height: 0.02     #default 0, meters
       max_obstacle_height: 2.0     #defaule 3, meters
       expected_update_rate: 0.0    #default 0, if not updating at this rate at least, remove from buffer
       observation_persistence: 0.0 #default 0, use all measurements taken during now-value, 0=latest 
       inf_is_valid: false          #default false, for laser scans
       clear_after_reading: true    #default false, clear the buffer after the layer gets readings from it
-      voxel_filter: true           #default off, apply voxel filter to sensor, recommend on 
+      voxel_filter: false           #default off, apply voxel filter to sensor, recommend on 
+      vertical_fov_angle: 0.50      #default 0.7, radians
+      horizontal_fov_angle: 0.80   #default 1.04, radians
     rgbd1_clear:
       data_type: PointCloud2
       topic: /xtion/filtered/points
@@ -59,8 +61,8 @@ local_costmap:
       clearing: true
       min_z: 0.0                   #default 0, meters
       max_z: 7.0                   #default 10, meters
-      vertical_fov_angle: 1.2      #default 0.7, radians
-      horizontal_fov_angle: 1.2   #default 1.04, radians
+      vertical_fov_angle: 0.58       #default 0.7, radians
+      horizontal_fov_angle: 0.87   #default 1.04, radians
       decay_acceleration: 16       #default 0, 1/s^2. If laser scanner MUST be 0
       model_type: 0                #default 0 (depth camera). Use 1 for 3D Lidar
 

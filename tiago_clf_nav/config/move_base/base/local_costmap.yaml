@@ -1,8 +1,8 @@
 # Independent settings for the local costmap
 local_costmap:
 
-  update_frequency : 3.0
-  publish_frequency: 1.0
+  update_frequency : 10
+  publish_frequency: 10
   max_obstacle_height: 2
 
   static_map    : false
@@ -30,7 +30,7 @@ local_costmap:
       sensor_frame: base_laser_link
       data_type: LaserScan
       topic: /scan_clf
-      expected_update_rate: 2.0
+      expected_update_rate: 5
       #observation_persistence: 1.0
       inf_is_valid: true
       marking: true
