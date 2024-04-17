@@ -1,0 +1,7 @@
+image: kassel.pgm
+resolution: 0.025000
+origin: [-20.168640, -10.888464, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+
