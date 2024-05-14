@@ -1,8 +1,8 @@
 # Independent settings for the planner's costmap
 global_costmap:
 
-  update_frequency : 2.5
-  publish_frequency: 2.5
+  update_frequency : 5
+  publish_frequency: 5
 
   #track_unknown_space: true
   #unknown_cost_value : 255
