@@ -1,0 +1,11 @@
+rgb_camera:
+  power_line_frequency: 1
+  global_time_enabled: true
+
+l500_depth_sensor:
+  freefall_detection_enabled: false
+  global_time_enabled: true
+
+realsense2_camera:
+  enable_gyro: false
+  enable_accel: false

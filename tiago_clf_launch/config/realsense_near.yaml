@@ -1,0 +1,11 @@
+l500_depth_sensor:
+  visual_preset: 5
+  laser_power: 80
+  confidence_threshold: 1
+  min_distance: 250
+  receiver_gain: 12
+  post_processing_sharpening: 2
+  pre_processing_sharpening: 3
+  receiver_gain: 12
+  noise_filtering: 5
+  digital_gain: 2

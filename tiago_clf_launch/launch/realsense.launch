@@ -2,6 +2,7 @@
 <launch>
 
 <arg name="publish_transform" default="True"></arg>
+<arg name="realsense_config" default="near"></arg>
 
 <include file="$(find tiago_clf_launch)/launch/rs_l515_calibration.launch">
 	<!-- <arg name="rgb" value="color" /> -->
@@ -28,6 +29,9 @@
 </include>
 
  <group ns="camera">
+   <rosparam command="load" file="$(find tiago_clf_launch)/config/realsense_base.yaml" />
+   <rosparam command="load" file="$(find tiago_clf_launch)/config/realsense_$(arg realsense_config).yaml" />
+
    <include file="$(find rgbd_launch)/launch/includes/rgb.launch.xml">
       <arg name="manager"                       value="realsense2_camera_manager" />
       <arg name="respawn"                       value="true" />
@@ -44,28 +48,5 @@
       <remap from="depth_registered/points"     to="depth_registered/points" />
    </node>
 </group>
-
-<rosparam>
-   /camera/rgb_camera/power_line_frequency: 1
-   /camera/rgb_camera/global_time_enabled: true
-
-   /camera/l500_depth_sensor/visual_preset: 5
-   /camera/l500_depth_sensor/laser_power: 80
-   /camera/l500_depth_sensor/confidence_threshold: 1
-   /camera/l500_depth_sensor/min_distance: 250
-   /camera/l500_depth_sensor/receiver_gain: 12
-   /camera/l500_depth_sensor/post_processing_sharpening: 2
-   /camera/l500_depth_sensor/pre_processing_sharpening: 3
-   /camera/l500_depth_sensor/receiver_gain: 12
-   /camera/l500_depth_sensor/noise_filtering: 5
-   /camera/l500_depth_sensor/digital_gain: 2
-
-   /camera/l500_depth_sensor/freefall_detection_enabled: false
-   /camera/l500_depth_sensor/global_time_enabled: true
-
-   /camera/realsense2_camera/enable_gyro: false
-   /camera/realsense2_camera/enable_accel: false
-</rosparam>
- 
 
 </launch>
