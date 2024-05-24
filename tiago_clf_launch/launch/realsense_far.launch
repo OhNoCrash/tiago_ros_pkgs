@@ -49,15 +49,15 @@
    /camera/rgb_camera/power_line_frequency: 1
    /camera/rgb_camera/global_time_enabled: true
 
-   /camera/l500_depth_sensor/visual_preset: 5
+   /camera/l500_depth_sensor/visual_preset: 3
    /camera/l500_depth_sensor/laser_power: 80
-   /camera/l500_depth_sensor/confidence_threshold: 1
+   /camera/l500_depth_sensor/confidence_threshold: 0
    /camera/l500_depth_sensor/min_distance: 250
    /camera/l500_depth_sensor/receiver_gain: 12
    /camera/l500_depth_sensor/post_processing_sharpening: 2
    /camera/l500_depth_sensor/pre_processing_sharpening: 3
    /camera/l500_depth_sensor/receiver_gain: 12
-   /camera/l500_depth_sensor/noise_filtering: 5
+   /camera/l500_depth_sensor/noise_filtering: 2
    /camera/l500_depth_sensor/digital_gain: 2
 
    /camera/l500_depth_sensor/freefall_detection_enabled: false
