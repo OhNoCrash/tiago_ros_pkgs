@@ -49,6 +49,10 @@
     <arg name="debug" value="$(arg debug)"/>
   </include>
 
+  <!-- Run Rqt with reconfigure -->
+  <node name="$(anon rqt)" pkg="rqt_gui" type="rqt_gui" respawn="true"
+	args="--perspective-file $(find tiago_moveit_config)/config/tiago_mtc.perspective" output="screen"/>
+
   <!-- If database loading was enabled, start mongodb as well -->
   <include file="$(find tiago_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)"/>
 
