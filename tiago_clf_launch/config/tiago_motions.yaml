@@ -31,7 +31,7 @@ play_motion:
       meta:
         name: handover_long
         usage: demo
-        description: 'Go home'
+        description: 'Goes into the handover position with arm outstretched'
 
     grasping:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_finger_joint]
