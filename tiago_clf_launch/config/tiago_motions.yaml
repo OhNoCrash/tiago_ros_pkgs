@@ -19,6 +19,19 @@ play_motion:
         name: Home
         usage: demo
         description: 'Go home'
+    handover_long:
+      joints: [arm_1_joint,
+      arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint,
+      arm_6_joint, arm_7_joint]
+      points:
+      - positions: [0.73, 0.20, -1.51, 0.67, -1.54, 1.29, -1.53]
+        time_from_start: 4.0
+      - positions: [1.56, 0.20, -1.45, 0.00, -1.54, 0.00, -1.53]
+        time_from_start: 6.0
+      meta:
+        name: handover_long
+        usage: demo
+        description: 'Go home'
 
     grasping:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_finger_joint]
