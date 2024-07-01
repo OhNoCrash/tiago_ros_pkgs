@@ -6,6 +6,7 @@
   <arg name="ft_sensor"  default="schunk-ft"/>
   <arg name="laser_model"  default="sick-571"/>
   <arg name="camera_model"  default="asus-xtion"/>
+  <arg name="solver"  default="kdl"/>
 
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
@@ -18,6 +19,7 @@
     <arg name="load_robot_description" value="true"/>
     <arg name="arm" value="$(arg arm)"/>
     <arg name="end_effector" value="$(arg end_effector)"/>
+    <arg name="planner" value="$(arg solver)"/>
     <arg name="ft_sensor" value="$(arg ft_sensor)"/>
     <arg name="laser_model" value="$(arg laser_model)"/>
     <arg name="camera_model" value="$(arg camera_model)"/>
@@ -41,12 +43,14 @@
     <arg name="fake_execution" value="true"/>
     <arg name="info" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
+    <arg name="planner" value="$(arg solver)"/>
   </include>
 
   <!-- Run Rviz and load the default config to see the state of the move_group node -->
   <include file="$(find tiago_moveit_config)/launch/moveit_rviz_mtc.launch">
     <arg name="config" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
+    <arg name="kinematics" value="$(arg solver)"/>
   </include>
 
   <!-- Run Rqt with reconfigure -->

@@ -1,0 +1,15 @@
+arm_torso:
+  kinematics_solver: bio_ik/BioIKKinematicsPlugin
+  kinematics_solver_search_resolution: 0.005
+  kinematics_solver_timeout: 0.005
+  kinematics_solver_attempts: 1
+arm:
+  kinematics_solver: bio_ik/BioIKKinematicsPlugin
+  kinematics_solver_search_resolution: 0.005
+  kinematics_solver_timeout: 0.005
+  kinematics_solver_attempts: 1
+
+  # optional bio_ik configuration parameters
+  #  center_joints_weight: 1
+  #  minimal_displacement_weight: 1
+  #  avoid_joint_limits_weight: 1
