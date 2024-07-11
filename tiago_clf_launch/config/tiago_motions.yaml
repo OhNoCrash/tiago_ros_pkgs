@@ -16,7 +16,7 @@ play_motion:
       - positions: [0.15, 0.20, -1.34, -0.20, 1.94, -1.57, 1.37, 0.0]
         time_from_start: 9.0
       meta:
-        name: Home
+        name: Home old
         usage: demo
         description: 'Go home'
 
@@ -30,7 +30,7 @@ play_motion:
       - positions: [1.56, 0.20, -1.45, 0.00, -1.54, 0.00, -1.53]
         time_from_start: 6.0
       meta:
-        name: handover_long
+        name: long handover
         usage: demo
         description: 'Goes into the handover position with arm outstretched'
 
@@ -88,7 +88,7 @@ play_motion:
       - positions: [0.15, 0.20, -1.34, -0.20, 1.94, -1.57, 1.37, -1.39]
         time_from_start: 4.0
       meta:
-        name: Home Fast
+        name: Home
         usage: demo
         description: 'Go home'
 
@@ -462,7 +462,7 @@ play_motion:
       - positions: [0.21, -0.74, -3.21, 2.26, 0.16, -0.12, 0.84]
         time_from_start: 2.0
       meta:
-        name: grasping_carry
+        name: grasping carry
         usage: demo
         description: 'grasp carry'
 
@@ -524,7 +524,7 @@ play_motion:
           - positions: [2.74, -1.21, -1.33, 1.95, -2.00, 0.93, -0.59]
             time_from_start: 5.0
           meta:
-            name: cml_carry_on_back
+            name: cml carry on back
             usage: carryMyLagguage
             description: 'Turns gripper on the back of the robot to transport bag without occlusion of important sensors'
             
