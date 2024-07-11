@@ -42,7 +42,7 @@ play_motion:
       meta:
         name: grasping
         usage: demo
-        description: 'Go pre grasp'
+        description: 'grasping'
 
     sg_open_door:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
@@ -50,9 +50,9 @@ play_motion:
       - positions: [0.10, 0.95, -2.32, 0.84, -0.91, 1.02, 0.29]
         time_from_start: 2.0
       meta:
-        name: grasping
+        name: open door
         usage: demo
-        description: 'Go pre grasp'
+        description: 'prepare to open the door'
 
     pregrasp:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_finger_joint]
@@ -472,7 +472,7 @@ play_motion:
       - positions: [0.15, 0.11, -1.58, 1.82, -0.33, -0.03, 0.46]
         time_from_start: 2.0
       meta:
-        name: carry_milk
+        name: carry milk
         usage: demo
         description: 'carry milk'
 
@@ -482,7 +482,7 @@ play_motion:
       - positions: [0.08, 0.44, -3.23, 1.64, 0.16, -0.12, 0.84]
         time_from_start: 2.0
       meta:
-        name: grasping_high
+        name: grasphigh
         usage: demo
         description: 'grasphigh'
 
