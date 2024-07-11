@@ -44,6 +44,16 @@ play_motion:
         usage: demo
         description: 'Go pre grasp'
 
+    sg_open_door:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
+      points:
+      - positions: [0.10, 0.95, -2.32, 0.84, -0.91, 1.02, 0.29]
+        time_from_start: 2.0
+      meta:
+        name: grasping
+        usage: demo
+        description: 'Go pre grasp'
+
     pregrasp:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_finger_joint]
       points:
