@@ -402,49 +402,49 @@ play_motion:
 
     pointing_left:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
-      meta: {description: pointing_left, name: pointing_left, usage: demo}
+      meta: {description: pointing left, name: pointing left, usage: demo}
       points:
       - positions: [0.19998590559757012, -1.339984962186872, -0.19954286766172208, 1.940211394560432, -1.5704734929417996, 0.10990430796763995, -1.390177870304425]
         time_from_start: 1.0
 
     pointing_forward_small_gesture:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_finger_joint]
-      meta: {description: pointing_forward_small_gesture, name: pointing_forward_small_gesture, usage: demo}
+      meta: {description: pointing forward small gesture, name: pointing forward small gesture, usage: demo}
       points:
       - positions: [0.19998590559757012, -1.339984962186872, -0.19954286766172208, 1.940211394560432, 0.37, 1.39, -1.390177870304425]
         time_from_start: 1.0
 
     pointing_forward_big_gesture:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_finger_joint]
-      meta: {description: pointing_forward_big_gesture, name: pointing_forward_big_gesture, usage: demo}
+      meta: {description: pointing forward big gesture, name: pointing forward big gesture, usage: demo}
       points:
       - positions: [0.25, -1.5, -1.68, 2.29, -1.90, -0.43, 0.0, 0.0]
         time_from_start: 2.0
 
     pointing_home:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
-      meta: {description: pointing_home, name: pointing_home, usage: demo}
+      meta: {description: pointing home, name: pointing home, usage: demo}
       points:
       - positions: [0.20, -1.34, -0.20, 1.94, -1.57, 1.37, 0.0]
         time_from_start: 1.0
 
     restaurant_carry:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
-      meta: {description: restaurant_carry, name: restaurant_carry, usage: demo}
+      meta: {description: restaurant carry, name: restaurant carry, usage: demo}
       points:
       - positions: [0.20003192563162497, -1.3405832226295846, -0.19981234548359428, 1.9407329549463865, -1.5698799831991088, 1.3495498456874668, -1.39]
         time_from_start: 4.0
 
     restaurant_handover:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
-      meta: {description: restaurant_handover, name: restaurant_handover, usage: demo}
+      meta: {description: restaurant handover, name: restaurant handover, usage: demo}
       points:
       - positions: [0.13873324027059786, -1.5007636211630797, -1.343287471655188, 1.6875307275767384, -1.5697704121696892, 1.3492987454117131, 0.7982477766211946]
         time_from_start: 4.0
 
     transport:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
-      meta: {description: restaurant_handover, name: restaurant_handover, usage: demo}
+      meta: {description: restaurant handover, name: restaurant handover, usage: demo}
       points:
       - positions: [0.41, -1.54, -0.61, 2.33, 0.16, 1.44, 0.84]
         time_from_start: 4.0
@@ -488,21 +488,21 @@ play_motion:
 
     transport_home:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, 'torso_lift_joint']
-      meta: {description: transport_home, name: transport_home, usage: demo}
+      meta: {description: transport_home, name: transport home, usage: demo}
       points:
       - positions: [0.13, -1.37, -0.26, 2.03, -1.54, 1.29, -2.07, 0.15]
         time_from_start: 2.0
 
     transport_over_head:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, 'torso_lift_joint']
-      meta: {description: transport_over_head, name: transport_over_head, usage: demo}
+      meta: {description: transport_over_head, name: transport over head, usage: demo}
       points:
       - positions: [0.09, 1.02, -3.01, 0.74, -1.54, 1.29, -0.20, 0.15]
         time_from_start: 2.0
 
     transport_over_head_no_lift:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
-      meta: {description: transport_over_head_no_lift, name: transport_over_head_no_lift, usage: demo}
+      meta: {description: transport_over_head_no_lift, name: transport over head no lift, usage: demo}
       points:
       - positions: [0.09, 1.02, -3.01, 0.74, -1.54, 1.29, -0.20]
         time_from_start: 2.0
