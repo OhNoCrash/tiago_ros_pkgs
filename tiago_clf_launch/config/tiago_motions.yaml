@@ -526,5 +526,20 @@ play_motion:
           meta:
             name: cml carry on back
             usage: carryMyLagguage
-            description: 'Turns gripper on the back of the robot to transport bag without occlusion of important sensors'
-            
+            description: 'Turns gripper on the back of the robot to transport bag without occlusion of important sensors'    
+
+    pre_pour:
+          joints: [arm_1_joint,
+          arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint,
+          arm_6_joint, arm_7_joint]
+          points:
+          - positions: [0.09, 1.02, -3.01, 0.74, -1.54, 1.29, -0.20]
+            time_from_start: 0.5
+          - positions: [0.40, -0.50, -1.67, 1.45, -1.89, 0.40, -1.00]
+            time_from_start: 5.0
+          - positions: [0.90, -0.23, -1.67, 1.45, -1.89, 0.07, -1.55]
+            time_from_start: 5.0
+          meta:
+            name: pre_pour
+            usage: demo
+            description: 'pre position for pouring'
