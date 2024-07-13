@@ -536,7 +536,7 @@ play_motion:
           - positions: [0.09, 1.02, -3.01, 0.74, -1.54, 1.29, -0.20]
             time_from_start: 0.5
           - positions: [0.40, -0.50, -1.67, 1.45, -1.89, 0.40, -1.00]
-            time_from_start: 5.0
+            time_from_start: 3.0
           - positions: [0.90, -0.23, -1.67, 1.45, -1.89, 0.07, -1.55]
             time_from_start: 5.0
           meta:
