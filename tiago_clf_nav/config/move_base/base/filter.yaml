@@ -27,7 +27,13 @@ scan_filter_chain:
     lower_replacement_value: -.inf
     upper_replacement_value: .inf
 
-
+- name: speckle_filter
+  type: laser_filters/LaserScanSpeckleFilter
+  params:
+    filter_type: 1
+    max_range: 1.0
+    max_range_difference: 0.05
+    filter_window: 3
 
 # - name: range
 #   type: laser_filters/LaserScanRangeFilter
