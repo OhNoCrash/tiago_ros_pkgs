@@ -1,0 +1,7 @@
+image: eindhoven_opl.pgm
+resolution: 0.025000
+origin: [-5.234627, -11.203731, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+
