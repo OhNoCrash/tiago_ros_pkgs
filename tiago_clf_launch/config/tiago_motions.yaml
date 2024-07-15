@@ -543,5 +543,3 @@ play_motion:
             name: pre pour
             usage: demo
             description: 'pre position for pouring'
-
-                  - positions: [0.09, 1.02, -3.01, 0.74, -1.54, 1.29, -0.20, 0.15]
