@@ -19,6 +19,15 @@
         <joint name="arm_7_joint" />
         <joint name="arm_tool_joint" />
     </group>
+    <group name="arm_no_j7">
+        <joint name="arm_1_joint" />
+        <joint name="arm_2_joint" />
+        <joint name="arm_3_joint" />
+        <joint name="arm_4_joint" />
+        <joint name="arm_5_joint" />
+        <joint name="arm_6_joint" />
+        <joint name="arm_tool_joint" />
+    </group>
     <group name="arm_torso">
         <joint name="torso_lift_joint" />
         <joint name="arm_1_joint" />
