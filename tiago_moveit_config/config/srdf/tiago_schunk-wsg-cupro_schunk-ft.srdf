@@ -207,6 +207,15 @@
         <joint name="arm_6_joint" value="1.29" />
         <joint name="arm_7_joint" value="-0.20" />
     </group_state>
+    <group_state name="post_cereal_grasp" group="arm">
+        <joint name="arm_1_joint" value="0.79" />
+        <joint name="arm_2_joint" value="0.89" />
+        <joint name="arm_3_joint" value="-2.01" />
+        <joint name="arm_4_joint" value="0.61" />
+        <joint name="arm_5_joint" value="-1.54" />
+        <joint name="arm_6_joint" value="1.39" />
+        <joint name="arm_7_joint" value="-0.40" />
+    </group_state>
     <group_state name="joint_middle" group="arm_torso">
         <joint name="arm_1_joint" value="1.375" />
         <joint name="arm_2_joint" value="-0.24" />
