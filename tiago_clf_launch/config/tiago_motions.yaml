@@ -535,10 +535,8 @@ play_motion:
           points:
           - positions: [0.35, 0.09, 1.02, -3.01, 0.74, -1.54, 1.29, -0.20]
             time_from_start: 0.5
-          - positions: [0.35, 0.49, 0.52, -2.19, 0.74, -1.54, 1.29, -0.91]
-            time_from_start: 1.0
           - positions: [0.35, 0.79, 0.89, -2.01, 0.61, -1.54, 1.39, -0.40]
-            time_from_start: 2.0
+            time_from_start: 1.0
           meta:
             name: pre pour
             usage: demo
