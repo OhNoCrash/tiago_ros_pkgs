@@ -543,3 +543,15 @@ play_motion:
             name: pre pour
             usage: demo
             description: 'pre position for pouring'
+
+    post_grasp_ign_j7:
+          joints: [arm_1_joint,
+          arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint,
+          arm_6_joint]
+          points:
+          - positions: [0.19, 0.15, -2.27, 2.28, 1.62, -0.65]
+            time_from_start: 0.5
+          meta:
+            name: post grasp ign j7
+            usage: demo
+            description: 'post grasp ign j7'
