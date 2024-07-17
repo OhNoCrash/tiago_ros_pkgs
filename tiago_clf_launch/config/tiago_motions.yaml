@@ -536,7 +536,7 @@ play_motion:
           - positions: [0.35, 0.79, 0.89, -2.01, 0.61, -1.54, 1.39, -0.40]
             time_from_start: 0.5
           - positions: [0.35, 0.89, 0.00, -1.79, 1.46, -1.89, 0.07, -1.53]
-            time_from_start: 1.5
+            time_from_start: 2.5
           meta:
             name: pre pour
             usage: demo
@@ -553,3 +553,15 @@ play_motion:
             name: post grasp ign j7
             usage: demo
             description: 'post grasp ign j7'
+
+    transport_over_head_ign_j7:
+          joints: [arm_1_joint,
+          arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint,
+          arm_6_joint]
+          points:
+          - positions: [0.09, 1.02, -3.01, 0.74, -1.54, 1.29]
+            time_from_start: 0.5
+          meta:
+            name: transport over head ign j7
+            usage: demo
+            description: 'transport over head ign j7'        
