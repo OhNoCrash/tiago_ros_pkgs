@@ -34,6 +34,20 @@ play_motion:
         usage: demo
         description: 'Goes into the handover position with arm outstretched'
 
+    handover_friendly:
+      joints: [arm_1_joint,
+      arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint,
+      arm_6_joint, arm_7_joint]
+      points:
+      - positions: [0.07, 0.15, -1.36, 2.15, -0.42, 0.56, 2.07]
+        time_from_start: 2.5
+      - positions: [0.07, 0.15, -1.36, 2.15, -0.42, 0.56, 2.07]
+        time_from_start: 3.0
+      meta:
+        name: friendly handover
+        usage: demo
+        description: 'A friendly, non agressive, handover movement.'
+
     grasping:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_finger_joint]
       points:
