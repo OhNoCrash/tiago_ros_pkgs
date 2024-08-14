@@ -34,19 +34,47 @@ play_motion:
         usage: demo
         description: 'Goes into the handover position with arm outstretched'
 
-    handover_friendly:
-      joints: [arm_1_joint,
+    # deprecated, use handover_friendly
+    handover_alt:
+      joints: [torso_lift_joint, arm_1_joint,
       arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint,
       arm_6_joint, arm_7_joint]
       points:
-      - positions: [0.07, 0.15, -1.36, 2.15, -0.42, 0.56, 2.07]
+      - positions: [0.15, 0.07, 0.15, -1.36, 2.15, -0.42, 0.56, 2.07]
         time_from_start: 2.5
-      - positions: [0.07, 0.15, -1.36, 2.15, -0.42, 0.56, 2.07]
+      - positions: [0.15, 0.07, 0.15, -1.36, 2.15, -0.42, 0.56, 2.07]
         time_from_start: 3.0
       meta:
-        name: friendly handover
+        name: handover alternative
         usage: demo
         description: 'A friendly, non agressive, handover movement.'
+
+    handover_friendly:
+      joints: [torso_lift_joint, arm_1_joint,
+      arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint,
+      arm_6_joint, arm_7_joint]
+      points:
+      - positions: [0.15, 0.07, 0.43, -1.88, 2.20, 0.16, 0.50, 1.89]
+        time_from_start: 2.0
+      - positions: [0.15, 0.07, 0.43, -1.88, 2.20, 0.16, 0.50, 1.89]
+        time_from_start: 2.5
+      meta:
+        name: handover friendly
+        usage: demo
+        description: 'A friendly, non agressive, handover movement.'
+
+    look_at_handover_friendly:
+      joints: ['head_1_joint', 'head_2_joint']
+      points:
+      - positions: [0.19, -0.34]
+        time_from_start: 1.5
+      - positions: [0.19, -0.34]
+        time_from_start: 2.0
+      meta:
+        name: Look at handover friendly 
+        usage: demo
+        description: 'Look at the hand of the handover friendly action'
+
 
     grasping:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, gripper_finger_joint]
