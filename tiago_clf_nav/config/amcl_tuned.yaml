@@ -1,19 +1,17 @@
 # Odometry model:
-# Basically ignore odom
 odom_model_type: diff-corrected
-odom_alpha1    : 10.
-odom_alpha2    : 6.1
-odom_alpha3    : 6.0
-odom_alpha4    : 5.5
-odom_alpha5    : 6.3
+odom_alpha1    : 0.12
+odom_alpha2    : 0.1
+odom_alpha3    : 0.09
+odom_alpha4    : 0.1
 
 # Particle filter:
 min_particles    : 100
 max_particles    : 1500
 kld_err          : 0.05
-kld_z            : 0.95
-update_min_d     : 0.0
-update_min_a     : 0.0
+kld_z            : 0.99
+update_min_d     : 0.01
+update_min_a     : !degrees 1.0
 resample_interval: 1
 converge_dist_threshold: 0.5
 
@@ -35,8 +33,8 @@ laser_lambda_short       : 0.1
 laser_likelihood_max_dist: 2.0
 # Params specific for likelihood_field_prob (wrt likelihood_field):
 do_beamskip              : true
-beam_skip_distance       : 0.25
-beam_skip_threshold      : 0.5
+beam_skip_distance       : 0.5
+beam_skip_threshold      : 0.3
 beam_skip_error_threshold: 0.9
 
 # Update/Rate params:
