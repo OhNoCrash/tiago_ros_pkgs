@@ -1,0 +1,14 @@
+<launch>
+
+  <arg name="publish_transform" default="True"></arg>
+
+  <group if="$(arg publish_transform)">
+    <node pkg="tf2_ros" type="static_transform_publisher" name="realsense_calibration" args="0.0056756 0.045364 -0.02167 -0.0069478 -0.0099311 0.0092912 0.99988 realsense_link camera_link" />
+  </group>
+
+  <group unless="$(arg publish_transform)"> 
+    <arg name="command_args" value="-d $(find tiago_clf_launch)/config/calibrate.rviz" />
+    <node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false" args="$(arg command_args)" output="log"/>
+  </group>
+
+</launch>

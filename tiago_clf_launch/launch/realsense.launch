@@ -4,10 +4,35 @@
 <arg name="publish_transform" default="True"></arg>
 <arg name="realsense_config" default="near"></arg>
 
-<include file="$(find tiago_clf_launch)/launch/rs_l515_calibration.launch">
-	<!-- <arg name="rgb" value="color" /> -->
+<!--include file="$(find tiago_clf_launch)/launch/rs_l515_calibration.launch">
 	<arg name="publish_transform" value="$(arg publish_transform)"/>
+</include-->
+
+<!-- 
+Make sure to add the following to the .bashrc:
+realsense_camera() {
+  if lsusb | grep -q "0b64"; then
+    export REALSENSE_CAMERA="L515"
+    echo "L515 camera detected, REALSENSE_CAMERA set to L515"
+  elif lsusb | grep -q "0b3a"; then
+    export REALSENSE_CAMERA="D435i"
+    echo "D435i camera detected, REALSENSE_CAMERA set to D435i"
+  else
+    echo "No RealSense camera detected"
+    unset REALSENSE_CAMERA  # Unset the variable if no camera is found
+  fi
+}
+realsense_camera
+-->
+
+<include if="$(eval env('REALSENSE_CAMERA') == 'L515')" file="$(find tiago_clf_launch)/launch/rs_l515_calibration.launch">
+  <arg name="publish_transform" value="$(arg publish_transform)"/>
 </include>
+
+<include if="$(eval env('REALSENSE_CAMERA') == 'D435i')" file="$(find tiago_clf_launch)/launch/rs_D435i_calibration.launch">
+  <arg name="publish_transform" value="$(arg publish_transform)"/>
+</include>
+
 
 <include file="$(find realsense2_camera)/launch/rs_camera.launch">
 	<!-- <arg name="rgb" value="color" /> -->
