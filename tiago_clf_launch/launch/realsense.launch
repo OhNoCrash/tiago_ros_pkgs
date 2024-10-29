@@ -3,14 +3,17 @@
 
 <arg name="publish_transform" default="True"></arg>
 <arg name="realsense_config" default="near"></arg>
+<arg name="camera_model" default="L515"/>
 
-<include file="$(find tiago_clf_launch)/launch/rs_l515_calibration.launch">
-	<!-- <arg name="rgb" value="color" /> -->
-	<arg name="publish_transform" value="$(arg publish_transform)"/>
+<include if="$(eval arg('camera_model') == 'L515')" file="$(find tiago_clf_launch)/launch/rs_l515_calibration.launch">
+  <arg name="publish_transform" value="$(arg publish_transform)"/>
+</include>
+
+<include if="$(eval arg('camera_model') == 'D435i')" file="$(find tiago_clf_launch)/launch/rs_D435i_calibration.launch">
+  <arg name="publish_transform" value="$(arg publish_transform)"/>
 </include>
 
 <include file="$(find realsense2_camera)/launch/rs_camera.launch">
-	<!-- <arg name="rgb" value="color" /> -->
 	<arg name="depth_fps" value="30"/>
 	<arg name="depth_width" value="640"/>
 	<arg name="depth_height" value="480"/>
