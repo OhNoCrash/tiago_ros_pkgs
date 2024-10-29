@@ -1,11 +1,8 @@
 <launch>
 
     <arg name="sim" default="false"/>
-    <arg if="$(arg sim)" name="config" default="sim"/>
-    <arg unless="$(arg sim)" name="config" default="base"/>
+    <arg name="config" default="base"/>
 
-    <arg if="$(arg sim)" name="used_config" value="sim"/>
-    <arg unless="$(arg sim)" name="used_config" default="$(arg config)"/>
 
     <!-- Load PlayMotion Navigation Pose -->
     <rosparam command="load" file="$(find tiago_clf_nav)/config/tiago_nav_motions.yaml" />
@@ -15,16 +12,16 @@
         <remap from="cmd_vel" to="nav_vel"/>
         <remap from="odom"    to="mobile_base_controller/odom"/>
 
-        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg used_config)/move_base.yaml" command="load" />
+        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg config)/move_base.yaml" command="load" />
 
-        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg used_config)/costmap.yaml" command="load" ns="global_costmap" />
-        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg used_config)/global_costmap.yaml" command="load" />
+        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg config)/costmap.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg config)/global_costmap.yaml" command="load" />
 
-        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg used_config)/costmap.yaml" command="load" ns="local_costmap" />
-        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg used_config)/local_costmap.yaml" command="load" />
+        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg config)/costmap.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg config)/local_costmap.yaml" command="load" />
 
-        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg used_config)/local_planner.yaml" command="load" />
-        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg used_config)/global_planner.yaml" command="load" />
+        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg config)/local_planner.yaml" command="load" />
+        <rosparam file="$(find tiago_clf_nav)/config/move_base/$(arg config)/global_planner.yaml" command="load" />
 
     </node>
         
