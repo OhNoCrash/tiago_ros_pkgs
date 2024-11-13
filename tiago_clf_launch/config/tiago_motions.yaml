@@ -546,6 +546,16 @@ play_motion:
         usage: demo
         description: 'Moving gripper in front of, above the head.'
 
+    transport_ohsf_no_lift:
+      joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
+      points:
+      - positions: [0.07, 1.02, -2.55, 0.63, -1.54, 1.33, -0.46]
+        time_from_start: 2.0
+      meta:
+        name: Transport High no lift
+        usage: demo
+        description: 'Moving gripper in front of, above the head.'
+
     place_in_box:
       joints: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint, 'torso_lift_joint']
       points:

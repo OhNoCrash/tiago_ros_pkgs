@@ -17,6 +17,12 @@
   </include>
 </group>
 
+<group if="$(eval arg('camera_model') == 'D455')">
+  <include file="$(find tiago_clf_launch)/launch/rs_D455_calibration.launch">
+    <arg name="publish_transform" value="$(arg publish_transform)"/>
+  </include>
+</group>
+
 <include file="$(find realsense2_camera)/launch/rs_camera.launch">
 	<arg name="depth_fps" value="30"/>
 	<arg name="depth_width" value="640"/>
