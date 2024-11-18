@@ -7,39 +7,39 @@ teleop:
       -
         axis: 1
         target: linear.x
-        scale: 1.0
+        scale: 0.8
       -
         axis: 3
         target: angular.z
-        scale: 1.0
+        scale: 0.8
 
   head_down:
     type: action
     action_name: /head_controller/increment
     action_goal:
-      increment_by: [-0.1, 0]
-    buttons: [0] # right pad, bottom button
-
-  head_up:
-    type: action
-    action_name: /head_controller/increment
-    action_goal:
-      increment_by: [0.1, 0]
-    buttons: [4] # right pad, top button
-
-  head_left:
-    type: action
-    action_name: /head_controller/increment
-    action_goal:
-      increment_by: [0, 0.1]
-    buttons: [2] # right pad, left button
+      increment_by: [0, -0.1]
+    buttons: [0] # A
 
   head_right:
     type: action
     action_name: /head_controller/increment
     action_goal:
-      increment_by: [0, -0.1]
-    buttons: [1] # right pad, right button
+      increment_by: [-0.1, 0]
+    buttons: [1] # B
+
+  head_left:
+    type: action
+    action_name: /head_controller/increment
+    action_goal:
+      increment_by: [0.1, 0]
+    buttons: [2] # X
+
+  head_up:
+    type: action
+    action_name: /head_controller/increment
+    action_goal:
+      increment_by: [0, 0.1]
+    buttons: [3] # Y
 
   close_gripper:
     type: action
@@ -53,4 +53,39 @@ teleop:
     action_name: /gripper_controller/increment
     action_goal:
       increment_by: [0.01]
-    buttons: [5] # LB
+    buttons: [4] # LB
+
+  torso_up:
+    type: action
+    action_name: /torso_controller/increment
+    action_goal:
+      increment_by: [0.05]
+    buttons: [7] # +
+
+  torso_down:
+    type: action
+    action_name: /torso_controller/increment
+    action_goal:
+      increment_by: [-0.05]
+    buttons: [6] # -
+
+  say_excuse:
+    type: action
+    action_name: /tts
+    action_goal:
+      speakerName: "asd"
+      rawtext:
+        text: "excuse me"
+        lang_id: "en_US"
+    buttons: [9] # R3
+
+  say_thanks:
+    type: action
+    action_name: /tts
+    action_goal:
+      speakerName: "asd"
+      rawtext:
+        text: "thanks"
+        lang_id: "en_US"
+    buttons: [10, 0] # L3 + 
+
