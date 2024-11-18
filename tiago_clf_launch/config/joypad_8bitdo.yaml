@@ -1,6 +1,3 @@
-joy_teleop:
-  autorepeat_rate: 0.05
-
 teleop:
   move:
     type: topic
