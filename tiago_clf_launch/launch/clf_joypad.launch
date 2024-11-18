@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="teleop_config" default="$(find tiago_clf_launch)/config/joybap_8bitdo.yaml" />
+  <arg name="cmd_vel" default="clf_joy_vel" />
+
+  <rosparam file="$(arg teleop_config)" command="load" />
+
+  <node pkg="joy_teleop" type="joy_teleop.py" name="clf_joy_teleop">
+    <remap from="cmd_vel" to="$(arg cmd_vel)" />
+    <remap from="joy" to="clf_joy"/>
+  </node>
+
+  <node pkg="joy" type="joy_node" name="clf_joystick">
+    <param name="autorepeat_rate" value="10" />
+    <remap from="joy" to="clf_joy"/>
+  </node>
+
+</launch>
